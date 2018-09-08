@@ -1,5 +1,6 @@
 package com.bestbetking.footypredictor.model.odds;
 
+import com.bestbetking.footypredictor.services.serialization.deserializer.UnixTimestampDeserializer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
@@ -15,8 +16,8 @@ public class Event {
     private final String homeTeam;
     @JsonProperty("sites")
     private final List<Source> sources;
-    @JsonProperty("commence_timeTOMAKEITNOTWORKFORNOW")
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonProperty("commence_time")
+    @JsonDeserialize(using = UnixTimestampDeserializer.class)
     private final LocalDateTime startTime;
 
 

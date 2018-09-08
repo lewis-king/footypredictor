@@ -20,9 +20,11 @@ public class MatchesTransformer {
 
             final String homeTeamName = TeamNamesMapping.getTeamNamesBySecondaryName(event.getHomeTeam()).getPrimaryName();
             final String awayTeamName = TeamNamesMapping.getTeamNamesBySecondaryName(event.getAwayTeam()).getPrimaryName();
-            final Double homeWinOdds = filteredSource.getOdds().getMatchOdds().get(1);
+            final int homeTeamIndex = event.getTeams().indexOf(event.getHomeTeam());
+            final int awayTeamIndex = event.getTeams().indexOf(event.getAwayTeam());
+            final Double homeWinOdds = filteredSource.getOdds().getMatchOdds().get(homeTeamIndex);
             final Double drawOdds = filteredSource.getOdds().getMatchOdds().get(2);
-            final Double awayWinOdds = filteredSource.getOdds().getMatchOdds().get(0);
+            final Double awayWinOdds = filteredSource.getOdds().getMatchOdds().get(awayTeamIndex);
 
             final Match match = new Match(homeTeamName, awayTeamName, homeWinOdds, drawOdds, awayWinOdds);
             matches.add(match);

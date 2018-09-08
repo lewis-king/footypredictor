@@ -1,12 +1,12 @@
 package com.bestbetking.footypredictor.services.prediction;
 
-import com.bestbetking.footypredictor.configuration.AppConfig;
 import com.bestbetking.footypredictor.configuration.PredictionMLConfig;
 import com.bestbetking.footypredictor.model.odds.OddsPayload;
 import com.bestbetking.footypredictor.model.prediction.Match;
-import com.bestbetking.footypredictor.model.prediction.Prediction;
+import com.bestbetking.footypredictor.model.prediction.Predictions;
 import com.bestbetking.footypredictor.services.odds.OddsRetriever;
 import com.bestbetking.footypredictor.services.transformers.MatchesTransformer;
+import com.bestbetking.footypredictor.services.transformers.PredictionsTransformer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,7 @@ public class FootballPredictionService implements PredictionService {
     }
 
     @Override
-    public List<Prediction> predict(String leagueId) throws JsonProcessingException {
+    public Predictions predict(String leagueId) throws JsonProcessingException {
 
         final OddsPayload oddsPayload = oddsRetriever.retrieveOdds();
         List<Match> matches = MatchesTransformer.constructMatches(oddsPayload);
@@ -46,8 +46,8 @@ public class FootballPredictionService implements PredictionService {
         String requestPayload = new ObjectMapper().writeValueAsString(matches);
         HttpEntity<String> requestEntity = new HttpEntity<>(requestPayload, headers);
         //Do I need to return array and then create List or can I just return a straight List!?
-        final ResponseEntity<Prediction[]> predictions = restTemplate.exchange(predictionMLConfig.getUrl(), HttpMethod.POST, requestEntity, Prediction[].class, (Object) null);
-        final List<Prediction> predictionList = Arrays.asList(predictions.getBody());
-        return predictionList;
+        final ResponseEntity<Predictions> predictionsResponse = restTemplate.exchange(predictionMLConfig.getUrl(), HttpMethod.POST, requestEntity, Predictions.class, (Object) null);
+        final Predictions predictions = PredictionsTransformer.enrichPredictions(oddsPayload.getEvents(), predictionsResponse.getBody());
+        return predictions;
     }
 }
