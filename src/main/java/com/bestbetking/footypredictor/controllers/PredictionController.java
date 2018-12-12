@@ -5,6 +5,7 @@ import com.bestbetking.footypredictor.model.prediction.Predictions;
 import com.bestbetking.footypredictor.services.prediction.PredictionService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,8 @@ public class PredictionController {
 
     @Autowired
     private final PredictionService predictionService;
+    @Autowired
+    private Environment env;
 
     public PredictionController(PredictionService predictionService) {
         this.predictionService = predictionService;
@@ -35,15 +38,15 @@ public class PredictionController {
     public Predictions generatePredictions(@PathVariable("leagueId") String leagueId,
                                            @PathVariable("pwd") String pwd) throws IllegalAccessException, JsonProcessingException {
         //Temporary check to ensure not any Tom, Dick, or Harry can invoke this resource.
-        //In future will add proper authorization
-        if (!"lking".equals(pwd)) {
+        //Will add a proper auth filter in the future, but this will do for now.
+        if (!env.getProperty("footypredictor.admin.password").equals(pwd)) {
             throw new IllegalAccessException();
         }
         Predictions predictions = predictionService.predict(leagueId);
         return predictions;
     }
 
-    @RequestMapping(method={RequestMethod.GET})
+    @RequestMapping(value="/", method={RequestMethod.GET})
     public String index() {
         return "index";
     }
