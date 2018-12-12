@@ -1,10 +1,13 @@
 package com.bestbetking.footypredictor.services.prediction;
 
 import com.bestbetking.footypredictor.configuration.PredictionMLConfig;
+import com.bestbetking.footypredictor.data.PredictionRepository;
+import com.bestbetking.footypredictor.model.odds.Event;
 import com.bestbetking.footypredictor.model.odds.OddsPayload;
 import com.bestbetking.footypredictor.model.prediction.Match;
 import com.bestbetking.footypredictor.model.prediction.Predictions;
 import com.bestbetking.footypredictor.services.odds.OddsRetriever;
+import com.bestbetking.footypredictor.services.odds.stub.DummyFootballOddsRetriever;
 import com.bestbetking.footypredictor.services.transformers.MatchesTransformer;
 import com.bestbetking.footypredictor.services.transformers.PredictionsTransformer;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -14,30 +17,32 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class FootballPredictionService implements PredictionService {
 
-    @Autowired
     private final RestTemplate restTemplate;
-    @Autowired
     private final OddsRetriever oddsRetriever;
-    @Autowired
+    private final PredictionRepository predictionRepository;
     private final PredictionMLConfig predictionMLConfig;
 
-    public FootballPredictionService(RestTemplate restTemplate, OddsRetriever oddsRetriever, PredictionMLConfig predictionMLConfig) {
+    @Autowired
+    public FootballPredictionService(RestTemplate restTemplate, OddsRetriever oddsRetriever, PredictionRepository predictionRepository, PredictionMLConfig predictionMLConfig) {
         this.restTemplate = restTemplate;
         this.oddsRetriever = oddsRetriever;
+        this.predictionRepository = predictionRepository;
         this.predictionMLConfig = predictionMLConfig;
     }
 
     @Override
     public Predictions predict(String leagueId) throws JsonProcessingException {
 
-        final OddsPayload oddsPayload = oddsRetriever.retrieveOdds();
-        List<Match> matches = MatchesTransformer.constructMatches(oddsPayload);
+        final List<OddsPayload> oddsPayloads = oddsRetriever.retrieveOdds();
+        List<Match> matches = MatchesTransformer.constructMatches(oddsPayloads);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -45,9 +50,13 @@ public class FootballPredictionService implements PredictionService {
 
         String requestPayload = new ObjectMapper().writeValueAsString(matches);
         HttpEntity<String> requestEntity = new HttpEntity<>(requestPayload, headers);
-        //Do I need to return array and then create List or can I just return a straight List!?
-        final ResponseEntity<Predictions> predictionsResponse = restTemplate.exchange(predictionMLConfig.getUrl(), HttpMethod.POST, requestEntity, Predictions.class, (Object) null);
-        final Predictions predictions = PredictionsTransformer.enrichPredictions(oddsPayload.getEvents(), predictionsResponse.getBody());
+        final ResponseEntity<Predictions> predictionsResponse = restTemplate.exchange(predictionMLConfig.getApi(), HttpMethod.POST, requestEntity, Predictions.class, (Object) null);
+        List<Event> events = oddsPayloads.stream().map(oddsPayload -> oddsPayload.getEvents())
+                .flatMap(e -> e.stream()).collect(Collectors.toList());
+        final Predictions predictions = PredictionsTransformer.enrichPredictions(events, predictionsResponse.getBody());
+
+        predictionRepository.saveAll(predictions.getPredictions());
+
         return predictions;
     }
 }

@@ -9,13 +9,13 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "footypredictor.footballpredictionml")
 public class PredictionMLConfig {
 
-    private String url;
+    private String api;
 
-    public String getUrl() {
-        return url;
+    public String getApi() {
+        return api;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setApi(String api) {
+        this.api = api;
     }
 }

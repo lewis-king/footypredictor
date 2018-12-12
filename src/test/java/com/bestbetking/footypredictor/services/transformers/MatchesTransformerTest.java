@@ -15,7 +15,7 @@ public class MatchesTransformerTest {
     private final OddsRetriever oddsRetriever;
 
     public MatchesTransformerTest() throws IOException {
-        this.oddsRetriever = new DummyFootballOddsRetriever();
+        this.oddsRetriever = new DummyFootballOddsRetriever("src/test/resources/odds_api_example.json");
     }
 
     @Test

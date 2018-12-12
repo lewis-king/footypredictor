@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -17,12 +18,13 @@ public class OddsRetrieverTest {
     private final OddsRetriever oddsRetriever;
 
     public OddsRetrieverTest() throws IOException {
-        oddsRetriever = new DummyFootballOddsRetriever();
+        oddsRetriever = new DummyFootballOddsRetriever("src/test/resources/odds_api_example.json");
     }
 
     @Test
     public void testOddsRetrieval() {
-        OddsPayload oddsPayload = oddsRetriever.retrieveOdds();
+        List<OddsPayload> oddsPayloads = oddsRetriever.retrieveOdds();
+        OddsPayload oddsPayload = oddsPayloads.get(0);
 
         assertThat(oddsPayload.getEvents().size(), is(13));
         assertThat(oddsPayload.isSuccess(), is(true));

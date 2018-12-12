@@ -1,0 +1,1052 @@
+{
+  "success": true,
+  "data": [
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Nice",
+        "Rennes"
+      ],
+      "commence_time": 1536944400,
+      "home_team": "Nice",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              2.2,
+              3.35,
+              3.35
+            ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1536480130,
+          "odds": {
+            "h2h": [
+              2.25,
+              3.2,
+              3.3
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              2.38,
+              3.26,
+              3.42
+            ]
+          }
+        },
+        {
+          "site_key": "williamhill",
+          "site_nice": "William Hill",
+          "last_update": 1536480214,
+          "odds": {
+            "h2h": [
+              2.3,
+              3.1,
+              3.3
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              2.29,
+              3.15,
+              3.35
+            ]
+          }
+        }
+      ],
+      "sites_count": 5
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Paris Saint Germain",
+        "Saint Etienne"
+      ],
+      "commence_time": 1536950700,
+      "home_team": "Paris Saint Germain",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              1.18,
+              14,
+              7.5
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              1.2,
+              17,
+              8
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              1.16,
+              14.5,
+              7.85
+            ]
+          }
+        }
+      ],
+      "sites_count": 3
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Caen",
+        "Lyon"
+      ],
+      "commence_time": 1537023600,
+      "home_team": "Caen",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              5.4,
+              1.62,
+              3.95
+            ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1536480130,
+          "odds": {
+            "h2h": [
+              5,
+              1.67,
+              3.8
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              5.6,
+              1.69,
+              4
+            ]
+          }
+        },
+        {
+          "site_key": "williamhill",
+          "site_nice": "William Hill",
+          "last_update": 1536480214,
+          "odds": {
+            "h2h": [
+              4.75,
+              1.67,
+              4
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              5,
+              1.67,
+              3.9
+            ]
+          }
+        }
+      ],
+      "sites_count": 5
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Montpellier",
+        "Strasbourg"
+      ],
+      "commence_time": 1537034400,
+      "home_team": "Montpellier",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              1.9,
+              4.3,
+              3.35
+            ]
+          }
+        },
+        {
+          "site_key": "paddypower",
+          "site_nice": "Paddy Power",
+          "last_update": 1536480208,
+          "odds": {
+            "h2h": [
+              1.8,
+              4,
+              3.2
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              1.96,
+              4.45,
+              3.5
+            ]
+          }
+        },
+        {
+          "site_key": "williamhill",
+          "site_nice": "William Hill",
+          "last_update": 1536480214,
+          "odds": {
+            "h2h": [
+              1.91,
+              4,
+              3.5
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              1.92,
+              4.15,
+              3.4
+            ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1536480087,
+          "odds": {
+            "h2h": [
+              1.9,
+              4.1,
+              3.35
+            ]
+          }
+        }
+      ],
+      "sites_count": 6
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "AS Monaco",
+        "Toulouse"
+      ],
+      "commence_time": 1537034400,
+      "home_team": "Toulouse",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              2.35,
+              3,
+              3.4
+            ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1536480130,
+          "odds": {
+            "h2h": [
+              2.38,
+              2.9,
+              3.4
+            ]
+          }
+        },
+        {
+          "site_key": "paddypower",
+          "site_nice": "Paddy Power",
+          "last_update": 1536480208,
+          "odds": {
+            "h2h": [
+              2.3,
+              2.8,
+              3.3
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              2.48,
+              2.96,
+              3.58
+            ]
+          }
+        },
+        {
+          "site_key": "williamhill",
+          "site_nice": "William Hill",
+          "last_update": 1536480214,
+          "odds": {
+            "h2h": [
+              2.4,
+              2.8,
+              3.5
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              2.4,
+              2.85,
+              3.4
+            ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1536480087,
+          "odds": {
+            "h2h": [
+              2.4,
+              2.84,
+              3.3
+            ]
+          }
+        }
+      ],
+      "sites_count": 7
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Amiens",
+        "Lille"
+      ],
+      "commence_time": 1537034400,
+      "home_team": "Amiens",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              3.25,
+              2.35,
+              3.15
+            ]
+          }
+        },
+        {
+          "site_key": "paddypower",
+          "site_nice": "Paddy Power",
+          "last_update": 1536480208,
+          "odds": {
+            "h2h": [
+              3,
+              2.25,
+              2.88
+            ]
+          }
+        },
+        {
+          "site_key": "williamhill",
+          "site_nice": "William Hill",
+          "last_update": 1536480214,
+          "odds": {
+            "h2h": [
+              3,
+              2.37,
+              3.25
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              3.15,
+              2.36,
+              3.2
+            ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1536480087,
+          "odds": {
+            "h2h": [
+              3.1,
+              2.34,
+              3.15
+            ]
+          }
+        }
+      ],
+      "sites_count": 5
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Angers",
+        "Dijon"
+      ],
+      "commence_time": 1537034400,
+      "home_team": "Dijon",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              3.65,
+              2.1,
+              3.3
+            ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1536480130,
+          "odds": {
+            "h2h": [
+              3.6,
+              2.05,
+              3.4
+            ]
+          }
+        },
+        {
+          "site_key": "paddypower",
+          "site_nice": "Paddy Power",
+          "last_update": 1536480208,
+          "odds": {
+            "h2h": [
+              3.5,
+              2,
+              3.3
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              3.68,
+              2.12,
+              3.62
+            ]
+          }
+        },
+        {
+          "site_key": "williamhill",
+          "site_nice": "William Hill",
+          "last_update": 1536480214,
+          "odds": {
+            "h2h": [
+              3.4,
+              2.05,
+              3.6
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              3.55,
+              2.09,
+              3.4
+            ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1536480087,
+          "odds": {
+            "h2h": [
+              3.55,
+              2.04,
+              3.45
+            ]
+          }
+        }
+      ],
+      "sites_count": 7
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Guingamp",
+        "Marseille"
+      ],
+      "commence_time": 1537124400,
+      "home_team": "Marseille",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              7.5,
+              1.35,
+              5.2
+            ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1536480130,
+          "odds": {
+            "h2h": [
+              8,
+              1.33,
+              5.5
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              8.9,
+              1.36,
+              5.75
+            ]
+          }
+        },
+        {
+          "site_key": "williamhill",
+          "site_nice": "William Hill",
+          "last_update": 1536480214,
+          "odds": {
+            "h2h": [
+              8,
+              1.33,
+              5.5
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              8.5,
+              1.33,
+              5.5
+            ]
+          }
+        }
+      ],
+      "sites_count": 5
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Lille",
+        "Nantes"
+      ],
+      "commence_time": 1537628400,
+      "home_team": "Lille",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              2.25,
+              3.2,
+              3.35
+            ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1536480130,
+          "odds": {
+            "h2h": [
+              2.25,
+              3.13,
+              3.4
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              2.35,
+              3.24,
+              3.5
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              2.26,
+              3.2,
+              3.35
+            ]
+          }
+        }
+      ],
+      "sites_count": 4
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Montpellier",
+        "Nice"
+      ],
+      "commence_time": 1537639200,
+      "home_team": "Montpellier",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              2.5,
+              3.05,
+              3.1
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              2.55,
+              3.4,
+              2.99
+            ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1536480130,
+          "odds": {
+            "h2h": [
+              2.45,
+              3.1,
+              3
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              2.45,
+              3.15,
+              3.05
+            ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1536480087,
+          "odds": {
+            "h2h": [
+              1.91,
+              1.34,
+              1.32
+            ]
+          }
+        }
+      ],
+      "sites_count": 5
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Caen",
+        "Saint Etienne"
+      ],
+      "commence_time": 1537639200,
+      "home_team": "Saint Etienne",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              5.8,
+              1.65,
+              3.55
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              6.5,
+              1.65,
+              3.84
+            ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1536480130,
+          "odds": {
+            "h2h": [
+              6,
+              1.62,
+              3.6
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              5.8,
+              1.64,
+              3.65
+            ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1536480087,
+          "odds": {
+            "h2h": [
+              1.01,
+              1.45,
+              3.1
+            ]
+          }
+        }
+      ],
+      "sites_count": 5
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Angers",
+        "Toulouse"
+      ],
+      "commence_time": 1537639200,
+      "home_team": "Angers",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              2.3,
+              3.25,
+              3.25
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              2.41,
+              3.3,
+              3.3
+            ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1536480130,
+          "odds": {
+            "h2h": [
+              2.3,
+              3.2,
+              3.2
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              2.33,
+              3.2,
+              3.2
+            ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1536480087,
+          "odds": {
+            "h2h": [
+              1.83,
+              2.24,
+              2.96
+            ]
+          }
+        }
+      ],
+      "sites_count": 5
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Amiens",
+        "Strasbourg"
+      ],
+      "commence_time": 1537639200,
+      "home_team": "Strasbourg",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              4.7,
+              1.8,
+              3.5
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              5,
+              1.76,
+              3.5
+            ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1536480087,
+          "odds": {
+            "h2h": [
+              1.01,
+              1.53,
+              3.15
+            ]
+          }
+        }
+      ],
+      "sites_count": 3
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Paris Saint Germain",
+        "Rennes"
+      ],
+      "commence_time": 1537707600,
+      "home_team": "Rennes",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              1.35,
+              9,
+              4.75
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              1.4,
+              9.4,
+              5
+            ]
+          }
+        }
+      ],
+      "sites_count": 2
+    },
+    {
+      "sport_key": "soccer_france_ligue_one",
+      "sport_nice": "Ligue 1 - France",
+      "teams": [
+        "Bordeaux",
+        "Guingamp"
+      ],
+      "commence_time": 1537714800,
+      "home_team": "Guingamp",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536480195,
+          "odds": {
+            "h2h": [
+              2.5,
+              2.88,
+              3.3
+            ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1536480130,
+          "odds": {
+            "h2h": [
+              2.4,
+              2.9,
+              3.3
+            ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1536480179,
+          "odds": {
+            "h2h": [
+              2.35,
+              3.3,
+              3.42
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536480305,
+          "odds": {
+            "h2h": [
+              2.36,
+              3.05,
+              3.3
+            ]
+          }
+        }
+      ],
+      "sites_count": 4
+    }
+  ]
+}

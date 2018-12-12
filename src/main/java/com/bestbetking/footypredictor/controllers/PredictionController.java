@@ -28,7 +28,7 @@ public class PredictionController {
     @RequestMapping(value = "/{leagueId}", method = RequestMethod.GET)
     public List<Prediction> getPredictions(@PathVariable("leagueId") String leagueId) {
 
-        return Arrays.asList(new Prediction("Crystal Palace", "Man United", 5d, 0d, LocalDateTime.now()));
+        return Arrays.asList(new Prediction("Premier League", "Crystal Palace", "Man United", 5d, 0d, LocalDateTime.now()));
     }
 
     @RequestMapping(value = "/generatePredictions/{leagueId}/{pwd}", method = RequestMethod.POST)
@@ -41,6 +41,11 @@ public class PredictionController {
         }
         Predictions predictions = predictionService.predict(leagueId);
         return predictions;
+    }
+
+    @RequestMapping(method={RequestMethod.GET})
+    public String index() {
+        return "index";
     }
 
 }

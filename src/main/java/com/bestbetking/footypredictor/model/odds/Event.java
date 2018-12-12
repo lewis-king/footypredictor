@@ -3,7 +3,6 @@ package com.bestbetking.footypredictor.model.odds;
 import com.bestbetking.footypredictor.services.serialization.deserializer.UnixTimestampDeserializer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -11,6 +10,8 @@ import java.util.stream.Collectors;
 
 public class Event {
 
+    @JsonProperty("sport_key")
+    private final String league;
     private final List<String> teams;
     @JsonProperty("home_team")
     private final String homeTeam;
@@ -21,7 +22,8 @@ public class Event {
     private final LocalDateTime startTime;
 
 
-    public Event(List<String> teams, String homeTeam, List<Source> sources, LocalDateTime startTime) {
+    public Event(String league, List<String> teams, String homeTeam, List<Source> sources, LocalDateTime startTime) {
+        this.league = league;
         this.teams = teams;
         this.homeTeam = homeTeam;
         this.sources = sources;
@@ -29,10 +31,15 @@ public class Event {
     }
 
     public Event() {
+        this.league = null;
         this.startTime = null;
-        teams = null;
-        homeTeam = null;
-        sources = null;
+        this.teams = null;
+        this.homeTeam = null;
+        this.sources = null;
+    }
+
+    public String getLeague() {
+        return league;
     }
 
     public List<String> getTeams() {

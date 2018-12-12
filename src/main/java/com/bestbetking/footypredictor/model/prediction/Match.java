@@ -2,6 +2,7 @@ package com.bestbetking.footypredictor.model.prediction;
 
 public class Match {
 
+    private final String league;
     private final String homeTeam;
     private final String awayTeam;
     private final Double homeWinOdds;
@@ -11,7 +12,8 @@ public class Match {
     private final Double FTHG;
     private final Double FTAG;
 
-    public Match(String homeTeam, String awayTeam, Double homeWinOdds, Double drawOdds, Double awayWinOdds) {
+    public Match(String league, String homeTeam, String awayTeam, Double homeWinOdds, Double drawOdds, Double awayWinOdds) {
+        this.league = league;
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
         this.homeWinOdds = homeWinOdds;
@@ -19,6 +21,10 @@ public class Match {
         this.awayWinOdds = awayWinOdds;
         this.FTHG = 0d;
         this.FTAG = 0d;
+    }
+
+    public String getLeague() {
+        return league;
     }
 
     public String getHomeTeam() {

@@ -1,0 +1,102 @@
+{
+  "success": true,
+  "data": [
+    {
+      "sport_key": "soccer_england_league1",
+      "sport_nice": "League 1",
+      "teams": [
+        "Coventry City",
+        "Oxford United"
+      ],
+      "commence_time": 1536490800,
+      "home_team": "Oxford United",
+      "sites": [
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1536479558,
+          "odds": {
+            "h2h": [
+              3.2,
+              2.2,
+              3.5
+            ]
+          }
+        },
+        {
+          "site_key": "nordicbet",
+          "site_nice": "Nordic Bet",
+          "last_update": 1536479694,
+          "odds": {
+            "h2h": [
+              2.95,
+              2.3,
+              3.35
+            ]
+          }
+        },
+        {
+          "site_key": "ladbrokes",
+          "site_nice": "Ladbrokes",
+          "last_update": 1536479573,
+          "odds": {
+            "h2h": [
+              3.1,
+              2.3,
+              3.3
+            ]
+          }
+        },
+        {
+          "site_key": "williamhill",
+          "site_nice": "William Hill",
+          "last_update": 1536479778,
+          "odds": {
+            "h2h": [
+              3,
+              2.3,
+              3.4
+            ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1536479631,
+          "odds": {
+            "h2h": [
+              3.25,
+              2.38,
+              3.55
+            ]
+          }
+        },
+        {
+          "site_key": "paddypower",
+          "site_nice": "Paddy Power",
+          "last_update": 1536479707,
+          "odds": {
+            "h2h": [
+              3.1,
+              2.3,
+              3.3
+            ]
+          }
+        },
+        {
+          "site_key": "betvictor",
+          "site_nice": "Bet Victor",
+          "last_update": 1536479610,
+          "odds": {
+            "h2h": [
+              3.13,
+              2.3,
+              3.5
+            ]
+          }
+        }
+      ],
+      "sites_count": 7
+    }
+  ]
+}
