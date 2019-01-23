@@ -5,6 +5,7 @@ import com.bestbetking.footypredictor.model.prediction.Predictions;
 import com.bestbetking.footypredictor.services.mapping.League;
 import com.bestbetking.footypredictor.services.mapping.TeamNamesMapping;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class PredictionsTransformer {
@@ -16,7 +17,12 @@ public class PredictionsTransformer {
             prediction.setStartTime(associatedEvent.getStartTime());
             prediction.setLeague(League.getLeagueByThirdPartyKey(associatedEvent.getLeague()).getLeagueDisplayName());
         });
+        sortPredictionsByDateAsc(predictions);
         return predictions;
+    }
+
+    public static void sortPredictionsByDateAsc(final Predictions predictions) {
+        predictions.getPredictions().sort(Comparator.comparing(prediction -> prediction.getStartTime()));
     }
 
 }

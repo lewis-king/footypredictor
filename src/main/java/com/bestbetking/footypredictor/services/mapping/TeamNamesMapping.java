@@ -83,6 +83,8 @@ public enum TeamNamesMapping {
     CHELTENHAM("Cheltenham", "Cheltenham Town"),
     EXETER("Exeter", "Exeter City"),
     CREWE("Crewe", "Crewe Alexandra"),
+    //Bug with third party API is returning inconsistent team name for Crewe
+    CREWE_2("Crewe", "Crewe"),
     PORT_VALE("Port Vale", "Port Vale"),
     MACCLESFIELD("Macclesfield", "Macclesfield Town"),
     MORECAMBE("Morecambe", "Morecambe"),
@@ -92,6 +94,7 @@ public enum TeamNamesMapping {
     TRANMERE("Tranmere", "Tranmere Rovers"),
     CAMBRIDGE("Cambridge", "Cambridge United"),
     MANSFIELD("Mansfield", "Mansfield Town"),
+    MANSFIELD_2("Mansfield", "Mansfield"),
     LINCOLN("Lincoln", "Lincoln City"),
     MK_DONS("Milton Keynes Dons", "Milton Keynes Dons"),
     GRIMSBY("Grimsby", "Grimsby Town"),
@@ -174,10 +177,9 @@ public enum TeamNamesMapping {
     DIJON("Dijon", "Dijon"),
     GUINGAMP("Guingamp", "Guingamp"),
     MARSEILLE("Marseille", "Marseille"),
-    NANTES("Nantes", "Nantes")
-
-
-
+    NANTES("Nantes", "Nantes"),
+    NIMES("Nimes", "Nîmes Olympique"),
+    REIMS("Reims", "Stade de Reims")
     ;
 
     private final String primaryName;

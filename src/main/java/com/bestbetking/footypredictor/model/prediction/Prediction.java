@@ -2,9 +2,12 @@ package com.bestbetking.footypredictor.model.prediction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Objects;
 
 public class Prediction {
 
@@ -18,10 +21,12 @@ public class Prediction {
     private final Double homeTeamScore;
     private final Double awayTeamScore;
     private LocalDateTime startTime;
+    @Transient
+    private List<BetType> recommendedBets;
 
 
     public Prediction(String league, final String homeTeam, final String awayTeam, final Double homeTeamScore,
-                      final Double awayTeamScore, final LocalDateTime startTime) {
+                      final Double awayTeamScore, final LocalDateTime startTime, final List<BetType> recommendedBets) {
         this.id = homeTeam + "Vs" + awayTeam + "-" + startTime.format(DateTimeFormatter.ISO_LOCAL_DATE);
         this.league = league;
         this.homeTeam = homeTeam;
@@ -29,6 +34,7 @@ public class Prediction {
         this.homeTeamScore = homeTeamScore;
         this.awayTeamScore = awayTeamScore;
         this.startTime = startTime;
+        this.recommendedBets = recommendedBets;
     }
 
     public Prediction() {
@@ -39,6 +45,7 @@ public class Prediction {
         this.homeTeamScore = null;
         this.awayTeamScore = null;
         this.startTime = null;
+        this.recommendedBets = null;
     }
 
     public String getId() {
@@ -65,6 +72,10 @@ public class Prediction {
         return awayTeamScore;
     }
 
+    public List<BetType> getRecommendedBets() {
+        return recommendedBets;
+    }
+
     public LocalDateTime getStartTime() {
         return startTime;
     }
@@ -75,5 +86,44 @@ public class Prediction {
 
     public void setLeague(final String league) {
         this.league = league;
+    }
+
+    public void setRecommendedBets(List<BetType> recommendedBets) {
+        this.recommendedBets = recommendedBets;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Prediction that = (Prediction) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(league, that.league) &&
+                Objects.equals(homeTeam, that.homeTeam) &&
+                Objects.equals(awayTeam, that.awayTeam) &&
+                Objects.equals(homeTeamScore, that.homeTeamScore) &&
+                Objects.equals(awayTeamScore, that.awayTeamScore) &&
+                Objects.equals(startTime, that.startTime) &&
+                Objects.equals(recommendedBets, that.recommendedBets);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, league, homeTeam, awayTeam, homeTeamScore, awayTeamScore, startTime, recommendedBets);
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Prediction{");
+        sb.append("id='").append(id).append('\'');
+        sb.append(", league='").append(league).append('\'');
+        sb.append(", homeTeam='").append(homeTeam).append('\'');
+        sb.append(", awayTeam='").append(awayTeam).append('\'');
+        sb.append(", homeTeamScore=").append(homeTeamScore);
+        sb.append(", awayTeamScore=").append(awayTeamScore);
+        sb.append(", startTime=").append(startTime);
+        sb.append(", recommendedBets=").append(recommendedBets);
+        sb.append('}');
+        return sb.toString();
     }
 }
