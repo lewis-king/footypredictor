@@ -6,8 +6,10 @@ import org.junit.Test;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Collections;
 
 import static java.util.Arrays.asList;
+import static java.util.Collections.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 

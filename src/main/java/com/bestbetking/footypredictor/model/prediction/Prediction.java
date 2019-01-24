@@ -9,6 +9,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Objects;
 
+import static com.bestbetking.footypredictor.services.recommendation.BetRecommendationDecorator.buildRecommendedBetTypes;
+
 public class Prediction {
 
     @JsonIgnore
@@ -26,7 +28,7 @@ public class Prediction {
 
 
     public Prediction(String league, final String homeTeam, final String awayTeam, final Double homeTeamScore,
-                      final Double awayTeamScore, final LocalDateTime startTime, final List<BetType> recommendedBets) {
+                      final Double awayTeamScore, final LocalDateTime startTime) {
         this.id = homeTeam + "Vs" + awayTeam + "-" + startTime.format(DateTimeFormatter.ISO_LOCAL_DATE);
         this.league = league;
         this.homeTeam = homeTeam;
@@ -34,7 +36,6 @@ public class Prediction {
         this.homeTeamScore = homeTeamScore;
         this.awayTeamScore = awayTeamScore;
         this.startTime = startTime;
-        this.recommendedBets = recommendedBets;
     }
 
     public Prediction() {
