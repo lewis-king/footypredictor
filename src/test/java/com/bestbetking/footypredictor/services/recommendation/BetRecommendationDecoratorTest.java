@@ -1,15 +1,11 @@
 package com.bestbetking.footypredictor.services.recommendation;
 
 import com.bestbetking.footypredictor.model.prediction.BetType;
-import com.bestbetking.footypredictor.model.prediction.Prediction;
-import com.bestbetking.footypredictor.model.prediction.Predictions;
 import org.junit.Test;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static com.bestbetking.footypredictor.model.prediction.BetType.*;
-import static java.util.Arrays.asList;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasItem;
@@ -22,7 +18,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 3.3;
         Double awayTeamScore = 0.4;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, hasItem(HOME_WIN));
     }
@@ -32,7 +28,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 2.1;
         Double awayTeamScore = 4.2;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, hasItem(AWAY_WIN));
     }
@@ -42,7 +38,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 1.4;
         Double awayTeamScore = 3.3;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, hasItem(HOME_LAY));
     }
@@ -52,7 +48,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 3.3;
         Double awayTeamScore = 1.4;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, hasItem(AWAY_LAY));
     }
@@ -62,7 +58,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 1.55;
         Double awayTeamScore = 1.5;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, hasItem(OVER_1_HALF_GOALS));
     }
@@ -72,7 +68,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 1.33;
         Double awayTeamScore = 1.27;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, hasItem(UNDER_4_HALF_GOALS));
     }
@@ -82,7 +78,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 2.33;
         Double awayTeamScore = 2.27;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, hasItem(BOTH_TEAMS_TO_SCORE));
     }
@@ -92,7 +88,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 1.33;
         Double awayTeamScore = 0.27;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, hasItem(HOME_CLEAN_SHEET));
     }
@@ -102,7 +98,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 0.33;
         Double awayTeamScore = 1.27;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, hasItem(AWAY_CLEAN_SHEET));
     }
@@ -112,7 +108,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 2.3;
         Double awayTeamScore = 1.27;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, containsInAnyOrder(OVER_1_HALF_GOALS, AWAY_LAY));
     }
@@ -122,7 +118,7 @@ public class BetRecommendationDecoratorTest {
         Double homeTeamScore = 3.3;
         Double awayTeamScore = 1.27;
 
-        List<BetType> actual = BetRecommendationDecorator.buildRecommendedBetTypes(homeTeamScore, awayTeamScore);
+        List<BetType> actual = BetRecommendationDecorator.deriveRecommendedBetTypes(homeTeamScore, awayTeamScore);
 
         assertThat(actual, containsInAnyOrder(OVER_1_HALF_GOALS, HOME_WIN));
     }

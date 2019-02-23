@@ -28,12 +28,6 @@ public class PredictionController {
         this.predictionService = predictionService;
     }
 
-    @RequestMapping(value = "/{leagueId}", method = RequestMethod.GET)
-    public List<Prediction> getPredictions(@PathVariable("leagueId") String leagueId) {
-
-        return Arrays.asList(new Prediction("Premier League", "Crystal Palace", "Man United", 5d, 0d, LocalDateTime.now()));
-    }
-
     @RequestMapping(value = "/generatePredictions/{leagueId}/{pwd}", method = RequestMethod.POST)
     public Predictions generatePredictions(@PathVariable("leagueId") String leagueId,
                                            @PathVariable("pwd") String pwd) throws IllegalAccessException, JsonProcessingException {
@@ -46,9 +40,9 @@ public class PredictionController {
         return predictions;
     }
 
-    @RequestMapping(value="/", method={RequestMethod.GET})
-    public String index() {
-        return "index";
+    @RequestMapping(value = "/latest", method = RequestMethod.GET)
+    public Predictions retrieveLatestPredictions() {
+        return predictionService.retrievePredictions();
     }
 
 }

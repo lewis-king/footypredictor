@@ -8,6 +8,7 @@ import com.bestbetking.footypredictor.model.prediction.Match;
 import com.bestbetking.footypredictor.model.prediction.Predictions;
 import com.bestbetking.footypredictor.services.odds.OddsRetriever;
 import com.bestbetking.footypredictor.services.odds.stub.DummyFootballOddsRetriever;
+import com.bestbetking.footypredictor.services.recommendation.BetRecommendationDecorator;
 import com.bestbetking.footypredictor.services.transformers.MatchesTransformer;
 import com.bestbetking.footypredictor.services.transformers.PredictionsTransformer;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -58,5 +59,10 @@ public class FootballPredictionService implements PredictionService {
         predictionRepository.saveAll(predictions.getPredictions());
 
         return predictions;
+    }
+
+    @Override
+    public Predictions retrievePredictions() {
+        return new Predictions(BetRecommendationDecorator.deriveRecommendedBetTypes(predictionRepository.retrieveLatestPredictions()));
     }
 }

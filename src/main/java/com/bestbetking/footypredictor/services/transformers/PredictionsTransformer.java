@@ -17,7 +17,7 @@ public class PredictionsTransformer {
                     TeamNamesMapping.getTeamNamesBySecondaryName(event.getHomeTeam()).getPrimaryName().equals(prediction.getHomeTeam()) && TeamNamesMapping.getTeamNamesBySecondaryName(event.getAwayTeam()).getPrimaryName().equals(prediction.getAwayTeam())).findFirst().get();
             prediction.setStartTime(associatedEvent.getStartTime());
             prediction.setLeague(League.getLeagueByThirdPartyKey(associatedEvent.getLeague()).getLeagueDisplayName());
-            prediction.setRecommendedBets(BetRecommendationDecorator.buildRecommendedBetTypes(prediction.getHomeTeamScore(), prediction.getAwayTeamScore()));
+            prediction.setRecommendedBets(BetRecommendationDecorator.deriveRecommendedBetTypes(prediction.getHomeTeamScore(), prediction.getAwayTeamScore()));
         });
         sortPredictionsByDateAsc(predictions);
         return predictions;

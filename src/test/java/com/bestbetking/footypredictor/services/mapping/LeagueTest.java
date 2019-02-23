@@ -61,7 +61,7 @@ public class LeagueTest {
 
     @Test
     public void getLeagueByKey_e1() {
-        League actual = League.getLeagueByThirdPartyKey("E1");
+        League actual = League.getLeagueByKey("E1");
         assertEquals(League.E1, actual);
     }
 }

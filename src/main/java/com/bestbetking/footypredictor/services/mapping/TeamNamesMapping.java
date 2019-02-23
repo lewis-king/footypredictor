@@ -99,6 +99,7 @@ public enum TeamNamesMapping {
     MK_DONS("Milton Keynes Dons", "Milton Keynes Dons"),
     GRIMSBY("Grimsby", "Grimsby Town"),
     STEVENAGE("Stevenage", "Stevenage FC"),
+    STEVENAGE_2("Stevenage", "Stevenage"),
     SWINDON("Swindon", "Swindon Town"),
     YEOVIL("Yeovil", "Yeovil Town"),
     BURY("Bury", "Bury"),

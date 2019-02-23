@@ -6,5 +6,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 public interface PredictionService {
 
     Predictions predict(final String leagueId) throws JsonProcessingException;
+    Predictions retrievePredictions();
 
 }

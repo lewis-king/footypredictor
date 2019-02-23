@@ -1,1 +1,0 @@
-<%@include file="/resources/footypredictorui/build/index.html"%>

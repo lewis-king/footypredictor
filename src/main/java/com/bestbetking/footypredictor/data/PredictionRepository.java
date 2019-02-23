@@ -6,6 +6,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 
 
-public interface PredictionRepository extends MongoRepository<Prediction, String> {
-
+public interface PredictionRepository extends MongoRepository<Prediction, String>, PredictionRepositoryCustom {
 }

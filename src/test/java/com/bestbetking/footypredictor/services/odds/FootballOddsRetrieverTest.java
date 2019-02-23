@@ -2,6 +2,7 @@ package com.bestbetking.footypredictor.services.odds;
 
 import com.bestbetking.footypredictor.configuration.OddsConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -31,6 +32,7 @@ public class FootballOddsRetrieverTest {
     }
 
 
+    @Ignore
     @Test
     public void shouldRetrieveOdds() {
 
