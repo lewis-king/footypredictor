@@ -22,29 +22,33 @@ public class CSVReaderWriter {
     public List<EnrichedFootballHistoricRecord> read(InputStream input) throws IOException {
 
         List<EnrichedFootballHistoricRecord> footballHistoricRecords = new LinkedList<>();
-        Reader in = new InputStreamReader(input, "UTF-8");
-        Iterable<CSVRecord> records = CSVFormat.DEFAULT
-                .withHeader(HEADERS)
-                .withFirstRecordAsHeader()
-                .parse(in);
+        try {
+            Reader in = new InputStreamReader(input, "UTF-8");
+            Iterable<CSVRecord> records = CSVFormat.DEFAULT
+                    .withHeader(HEADERS)
+                    .withFirstRecordAsHeader()
+                    .parse(in);
 
-        records.forEach(record -> {
-            String division = record.get("Div");
-            LocalDate date;
-            try {
-                date = LocalDate.parse(record.get("Date"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-            } catch (DateTimeParseException dtpe) {
-                date = LocalDate.parse(record.get("Date"), DateTimeFormatter.ofPattern("dd/MM/yy"));
-            }
-            String homeTeam = record.get("HomeTeam");
-            String awayTeam = record.get("AwayTeam");
-            Integer homeTeamGoalsScored = Integer.parseInt(record.get("FTHG"));
-            Integer awayTeamGoalsScored = Integer.parseInt(record.get("FTAG"));
-            Character matchResult = record.get("FTR").charAt(0);
+            records.forEach(record -> {
+                String division = record.get("Div");
+                LocalDate date;
+                try {
+                    date = LocalDate.parse(record.get("Date"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                } catch (DateTimeParseException dtpe) {
+                    date = LocalDate.parse(record.get("Date"), DateTimeFormatter.ofPattern("dd/MM/yy"));
+                }
+                String homeTeam = record.get("HomeTeam");
+                String awayTeam = record.get("AwayTeam");
+                Integer homeTeamGoalsScored = Integer.parseInt(record.get("FTHG"));
+                Integer awayTeamGoalsScored = Integer.parseInt(record.get("FTAG"));
+                Character matchResult = record.get("FTR").charAt(0);
 
-            EnrichedFootballHistoricRecord footballHistoricRecord = new EnrichedFootballHistoricRecord(division, date, homeTeam, awayTeam, homeTeamGoalsScored, awayTeamGoalsScored, matchResult);
-            footballHistoricRecords.add(footballHistoricRecord);
-        });
+                EnrichedFootballHistoricRecord footballHistoricRecord = new EnrichedFootballHistoricRecord(division, date, homeTeam, awayTeam, homeTeamGoalsScored, awayTeamGoalsScored, matchResult);
+                footballHistoricRecords.add(footballHistoricRecord);
+            });
+        } finally {
+            input.close();
+        }
         return footballHistoricRecords;
     }
 

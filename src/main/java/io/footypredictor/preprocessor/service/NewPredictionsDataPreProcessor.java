@@ -37,7 +37,7 @@ public class NewPredictionsDataPreProcessor {
         List<EnrichedFootballHistoricRecord> enrichedFootballData;
         List<EnrichedFootballHistoricRecord> footballData;
         try {
-            input = csvDownloader.download("data" + File.separator + CURRENT_YEAR + File.separator + matches.get(0).getLeague() + ".csv");
+            input = csvDownloader.download("mmz4281" + File.separator + CURRENT_YEAR.substring(2, 6) + File.separator + matches.get(0).getLeague() + ".csv");
             footballData = csvReaderWriter.read(input);
         } catch (IOException e) {
             footballData = new ArrayList<>();
@@ -49,7 +49,7 @@ public class NewPredictionsDataPreProcessor {
         enrichedFootballData = new PromotedProcessor().enrich(enrichedFootballData);
         enrichedFootballData = new AvgGoalsScoredAndConcededProcessor().enrich(enrichedFootballData);
 
-        return enrichedFootballData;
+        return enrichedFootballData.subList(enrichedFootballData.size() - matches.size(), enrichedFootballData.size());
     }
 
 }
