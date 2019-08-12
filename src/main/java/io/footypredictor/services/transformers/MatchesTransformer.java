@@ -22,7 +22,7 @@ public class MatchesTransformer {
         try {
             final Source filteredSource = event.getSources().stream()
                     .filter(source -> source.getSourceId().equals("paddypower") || source.getSourceId().equals("skybet")).findFirst().get();
-            if (event.getStartTime().isBefore(LocalDateTime.now().plusWeeks(10))) { // one week normally
+            if (event.getStartTime().isBefore(LocalDateTime.now().plusWeeks(1))) { // one week normally
                 if (event.getHomeTeam() != "" && event.getAwayTeam() != "") {
                     final String homeTeamName = TeamNamesMapping.getTeamNamesBySecondaryName(event.getHomeTeam()).getPrimaryName();
                     final String awayTeamName = TeamNamesMapping.getTeamNamesBySecondaryName(event.getAwayTeam()).getPrimaryName();
