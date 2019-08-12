@@ -17,7 +17,7 @@ import java.util.List;
 public class CSVReaderWriter {
 
     private static String[] HEADERS = { "Div", "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR"};
-    private static String[] ENRICHED_HEADERS = { "Div", "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR", "HomeTeamOverallFormL3", "AwayTeamOverallFormL3", "HomeTeamHomeFormL3", "AwayTeamAwayFormL3", "HomeTeamPromoted", "AwayTeamPromoted", "HomeTeamAvgGoalsScoredOverall", "HomeTeamAvgGoalsConcededOverall", "AwayTeamAvgGoalsScoredOverall", "AwayTeamAvgGoalsConcededOverall", "HomeTeamAvgGoalsScoredHome", "HomeTeamAvgGoalsConcededHome", "AwayTeamAvgGoalsScoredAway", "AwayTeamAvgGoalsConcededAway", "HomeTeamAvgGoalsScoredOverallForm", "HomeTeamAvgGoalsConcededOverallForm", "AwayTeamAvgGoalsScoredOverallForm", "AwayTeamAvgGoalsConcededOverallForm", "HomeTeamAvgGoalsScoredHomeForm", "HomeTeamAvgGoalsConcededHomeForm", "AwayTeamAvgGoalsScoredAwayForm", "AwayTeamAvgGoalsConcededAwayForm"};
+    private static String[] ENRICHED_HEADERS = { "Div", "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR", "HomeTeamOverallFormL3", "AwayTeamOverallFormL3", "HomeTeamHomeFormL3", "AwayTeamAwayFormL3", "HomeTeamPromoted", "AwayTeamPromoted", "HomeTeamAvgGoalsScoredOverall", "HomeTeamAvgGoalsConcededOverall", "AwayTeamAvgGoalsScoredOverall", "AwayTeamAvgGoalsConcededOverall", "HomeTeamAvgGoalsScoredHome", "HomeTeamAvgGoalsConcededHome", "AwayTeamAvgGoalsScoredAway", "AwayTeamAvgGoalsConcededAway", "HomeTeamAvgGoalsScoredOverallL3", "HomeTeamAvgGoalsConcededOverallL3", "AwayTeamAvgGoalsScoredOverallL3", "AwayTeamAvgGoalsConcededOverallL3", "HomeTeamAvgGoalsScoredHomeL3", "HomeTeamAvgGoalsConcededHomeL3", "AwayTeamAvgGoalsScoredAwayL3", "AwayTeamAvgGoalsConcededAwayL3"};
 
     public List<EnrichedFootballHistoricRecord> read(InputStream input) throws IOException {
 
@@ -63,12 +63,12 @@ public class CSVReaderWriter {
             footballRecords.forEach((record) -> {
                 try {
                     printer.printRecord(record.getDivision(), record.getDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), record.getHomeTeam(), record.getAwayTeam(),
-                            record.getHomeTeamGoalsScored(), record.getAwayTeamGoalsScored(), record.getMatchResult(), record.getHomeTeamOverallForm(), record.getAwayTeamOverallForm(), record.getHomeTeamHomeForm(), record.getAwayTeamAwayForm(),
+                            record.getHomeTeamGoalsScored(), record.getAwayTeamGoalsScored(), record.getMatchResult(), record.getHomeTeamOverallFormL3(), record.getAwayTeamOverallFormL3(), record.getHomeTeamHomeFormL3(), record.getAwayTeamAwayFormL3(),
                             record.getHomeTeamWasPromoted() ? 1 : 0, record.getAwayTeamWasPromoted() ? 1 : 0,
                             record.getHomeTeamAverageGoalsScoredOverall(), record.getHomeTeamAverageGoalsConcededOverall(), record.getAwayTeamAverageGoalsScoredOverall(), record.getAwayTeamAverageGoalsConcededOverall(),
                             record.getHomeTeamAverageGoalsScoredHome(), record.getHomeTeamAverageGoalsConcededHome(), record.getAwayTeamAverageGoalsScoredAway(), record.getAwayTeamAverageGoalsConcededAway(),
-                            record.getHomeTeamAverageGoalsScoredOverallForm(), record.getHomeTeamAverageGoalsConcededOverallForm(), record.getAwayTeamAverageGoalsScoredOverallForm(), record.getAwayTeamAverageGoalsConcededOverallForm(),
-                            record.getHomeTeamAverageGoalsScoredHomeForm(), record.getHomeTeamAverageGoalsConcededHomeForm(), record.getAwayTeamAverageGoalsScoredAwayForm(), record.getAwayTeamAverageGoalsConcededAwayForm());
+                            record.getHomeTeamAverageGoalsScoredOverallL3(), record.getHomeTeamAverageGoalsConcededOverallL3(), record.getAwayTeamAverageGoalsScoredOverallL3(), record.getAwayTeamAverageGoalsConcededOverallL3(),
+                            record.getHomeTeamAverageGoalsScoredHomeL3(), record.getHomeTeamAverageGoalsConcededHomeL3(), record.getAwayTeamAverageGoalsScoredAwayL3(), record.getAwayTeamAverageGoalsConcededAwayL3());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

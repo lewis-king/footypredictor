@@ -20,6 +20,7 @@ public class AvgGoalsScoredAndConcededProcessor implements Processor {
             String homeTeam = footballData.get(i).getHomeTeam();
             String awayTeam = footballData.get(i).getAwayTeam();
 
+            // Overall
             List<EnrichedFootballHistoricRecord> limitedRecords = footballData.stream().skip(i + 1).limit(footballData.size() - i).collect(Collectors.toList());
             OptionalDouble avgHomeTeamGoalsScoredHome = limitedRecords.stream().filter(record -> record.getHomeTeam().equals(homeTeam)).mapToInt(FootballHistoricRecord::getHomeTeamGoalsScored).average();
             OptionalDouble avgHomeTeamGoalsConcededHome = limitedRecords.stream().filter(record -> record.getHomeTeam().equals(homeTeam)).mapToInt(FootballHistoricRecord::getAwayTeamGoalsScored).average();
@@ -30,8 +31,7 @@ public class AvgGoalsScoredAndConcededProcessor implements Processor {
             OptionalDouble avgAwayTeamGoalsScoredOverall = limitedRecords.stream().filter(record -> record.getAwayTeam().equals(awayTeam) || record.getHomeTeam().equals(awayTeam)).mapToInt(record -> record.getAwayTeam().equals(awayTeam) ? record.getAwayTeamGoalsScored() : record.getHomeTeamGoalsScored()).average();
             OptionalDouble avgAwayTeamGoalsConcededOverall = limitedRecords.stream().filter(record -> record.getAwayTeam().equals(awayTeam) || record.getHomeTeam().equals(awayTeam)).mapToInt(record -> record.getAwayTeam().equals(awayTeam) ? record.getHomeTeamGoalsScored() : record.getAwayTeamGoalsScored()).average();
 
-            //TODO: DEFO WANT THIS AS THIS IS GOALS SCORED FORM WHEREAS CURRENTLY WE ONLY CALCULATE BASED ON ENTIRE SEASON TO DATE
-            //Need to just calculate based on last 3 games.. hopefully can keep to a functional style
+            // Last 3
             List<EnrichedFootballHistoricRecord> last3RecordsHomeTeamHome = footballData.stream().skip(i + 1).filter(data -> data.getHomeTeam().equals(homeTeam)).limit(3).collect(Collectors.toList());
             List<EnrichedFootballHistoricRecord> last3RecordsAwayTeamAway = footballData.stream().skip(i + 1).filter(data -> data.getAwayTeam().equals(awayTeam)).limit(3).collect(Collectors.toList());
             List<EnrichedFootballHistoricRecord> last3RecordsHomeTeamOverall = footballData.stream().skip(i + 1).filter(data -> data.getHomeTeam().equals(homeTeam) || data.getAwayTeam().equals(homeTeam)).limit(3).collect(Collectors.toList());
@@ -57,14 +57,14 @@ public class AvgGoalsScoredAndConcededProcessor implements Processor {
                     .setAwayTeamAverageGoalsScoredOverall(avgAwayTeamGoalsScoredOverall.orElse(0d))
                     .setAwayTeamAverageGoalsConcededOverall(avgAwayTeamGoalsConcededOverall.orElse(0d))
 
-                    .setHomeTeamAverageGoalsScoredHomeForm(avgHomeTeamGoalsScoredHomeLast3.orElse(0d))
-                    .setHomeTeamAverageGoalsConcededHomeForm(avgHomeTeamGoalsConcededHomeLast3.orElse(0d))
-                    .setAwayTeamAverageGoalsScoredAwayForm(avgAwayTeamGoalsScoredAwayLast3.orElse(0d))
-                    .setAwayTeamAverageGoalsConcededAwayForm(avgAwayTeamGoalsConcededAwayLast3.orElse(0d))
-                    .setHomeTeamAverageGoalsScoredOverallForm(avgHomeTeamGoalsScoredOverallLast3.orElse(0d))
-                    .setHomeTeamAverageGoalsConcededOverallForm(avgHomeTeamGoalsConcededOverallLast3.orElse(0d))
-                    .setAwayTeamAverageGoalsScoredOverallForm(avgAwayTeamGoalsScoredOverallLast3.orElse(0d))
-                    .setAwayTeamAverageGoalsConcededOverallForm(avgAwayTeamGoalsConcededOverallLast3.orElse(0d))
+                    .setHomeTeamAverageGoalsScoredHomeL3(avgHomeTeamGoalsScoredHomeLast3.orElse(0d))
+                    .setHomeTeamAverageGoalsConcededHomeL3(avgHomeTeamGoalsConcededHomeLast3.orElse(0d))
+                    .setAwayTeamAverageGoalsScoredAwayL3(avgAwayTeamGoalsScoredAwayLast3.orElse(0d))
+                    .setAwayTeamAverageGoalsConcededAwayL3(avgAwayTeamGoalsConcededAwayLast3.orElse(0d))
+                    .setHomeTeamAverageGoalsScoredOverallL3(avgHomeTeamGoalsScoredOverallLast3.orElse(0d))
+                    .setHomeTeamAverageGoalsConcededOverallL3(avgHomeTeamGoalsConcededOverallLast3.orElse(0d))
+                    .setAwayTeamAverageGoalsScoredOverallL3(avgAwayTeamGoalsScoredOverallLast3.orElse(0d))
+                    .setAwayTeamAverageGoalsConcededOverallL3(avgAwayTeamGoalsConcededOverallLast3.orElse(0d))
                     .build();
             enrichedFootballHistoricRecords.add(enrichedFootballHistoricRecord);
         }

@@ -14,13 +14,13 @@ public class EnrichedFootballHistoricRecord extends FootballHistoricRecord {
     private static final DecimalFormat FORM_FORMAT = new DecimalFormat("0.00");
 
     // Home Team's Overall Form (both home and away) based on last 3 results
-    private Double homeTeamOverallForm;
+    private Double homeTeamOverallFormL3;
     // Away Team's Overall Form (both home and away) based on last 3 results
-    private Double awayTeamOverallForm;
+    private Double awayTeamOverallFormL3;
     // Home Team's Home Form based on last 3 results
-    private Double homeTeamHomeForm;
+    private Double homeTeamHomeFormL3;
     // Away Team's Away Form based on last 3 results
-    private Double awayTeamAwayForm;
+    private Double awayTeamAwayFormL3;
     // Was Home Team promoted to this div this season?
     private Boolean homeTeamWasPromoted;
     // Was Away Team promoted to this div this season?
@@ -42,21 +42,21 @@ public class EnrichedFootballHistoricRecord extends FootballHistoricRecord {
     // Average goals conceded by Away Team at Home throughout entire season to date
     private Double awayTeamAverageGoalsConcededAway = 0d;
     // Average goals scored by Home Team in all games throughout entire season to date
-    private Double homeTeamAverageGoalsScoredOverallForm = 0d;
+    private Double homeTeamAverageGoalsScoredOverallL3 = 0d;
     // Average goals conceded by Home Team in all games throughout entire season to date
-    private Double homeTeamAverageGoalsConcededOverallForm = 0d;
+    private Double homeTeamAverageGoalsConcededOverallL3 = 0d;
     // Average goals scored by Away Team in all games throughout entire season to date
-    private Double awayTeamAverageGoalsScoredOverallForm = 0d;
+    private Double awayTeamAverageGoalsScoredOverallL3 = 0d;
     // Average goals conceded by Away Team in all games throughout entire season to date
-    private Double awayTeamAverageGoalsConcededOverallForm = 0d;
+    private Double awayTeamAverageGoalsConcededOverallL3 = 0d;
     // Average goals scored by Home Team at Home throughout entire season to date
-    private Double homeTeamAverageGoalsScoredHomeForm = 0d;
+    private Double homeTeamAverageGoalsScoredHomeL3 = 0d;
     // Average goals conceded by Home Team at Home throughout entire season to date
-    private Double homeTeamAverageGoalsConcededHomeForm = 0d;
+    private Double homeTeamAverageGoalsConcededHomeL3 = 0d;
     // Average goals scored by Away Team at Home throughout entire season to date
-    private Double awayTeamAverageGoalsScoredAwayForm = 0d;
+    private Double awayTeamAverageGoalsScoredAwayL3 = 0d;
     // Average goals conceded by Away Team at Home throughout entire season to date
-    private Double awayTeamAverageGoalsConcededAwayForm = 0d;
+    private Double awayTeamAverageGoalsConcededAwayL3 = 0d;
 
 
     public EnrichedFootballHistoricRecord(String division, LocalDate date, String homeTeam, String awayTeam, Integer homeTeamGoalsScored, Integer awayTeamGoalsScored, Character matchResult) {
@@ -71,10 +71,10 @@ public class EnrichedFootballHistoricRecord extends FootballHistoricRecord {
         super(historicRecord.getDivision(), historicRecord.getDate(), historicRecord.getHomeTeam(), historicRecord.getAwayTeam(), historicRecord.getHomeTeamGoalsScored(), historicRecord.getAwayTeamGoalsScored(), historicRecord.getMatchResult());
     }
 
-    public EnrichedFootballHistoricRecord(FootballHistoricRecord historicRecord, Double homeTeamOverallForm, Double awayTeamOverallForm, Boolean homeTeamWasPromoted, Boolean awayTeamWasPromoted) {
+    public EnrichedFootballHistoricRecord(FootballHistoricRecord historicRecord, Double homeTeamOverallFormL3, Double awayTeamOverallFormL3, Boolean homeTeamWasPromoted, Boolean awayTeamWasPromoted) {
         super(historicRecord.getDivision(), historicRecord.getDate(), historicRecord.getHomeTeam(), historicRecord.getAwayTeam(), historicRecord.getHomeTeamGoalsScored(), historicRecord.getAwayTeamGoalsScored(), historicRecord.getMatchResult());
-        this.homeTeamOverallForm = Double.valueOf(FORM_FORMAT.format(homeTeamOverallForm));
-        this.awayTeamOverallForm = Double.valueOf(FORM_FORMAT.format(awayTeamOverallForm));
+        this.homeTeamOverallFormL3 = Double.valueOf(FORM_FORMAT.format(homeTeamOverallFormL3));
+        this.awayTeamOverallFormL3 = Double.valueOf(FORM_FORMAT.format(awayTeamOverallFormL3));
         this.homeTeamWasPromoted = homeTeamWasPromoted;
         this.awayTeamWasPromoted = awayTeamWasPromoted;
         this.homeTeamAverageGoalsScoredHome = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsScoredHome));
@@ -83,13 +83,13 @@ public class EnrichedFootballHistoricRecord extends FootballHistoricRecord {
         this.awayTeamAverageGoalsConcededAway = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsConcededAway));
     }
 
-    public EnrichedFootballHistoricRecord(String division, LocalDate date, String homeTeam, String awayTeam, Integer homeTeamGoalsScored, Integer awayTeamGoalsScored, Character matchResult, Double homeTeamOverallForm, Double awayTeamOverallForm, Double homeTeamHomeForm, Double awayTeamAwayForm, Boolean homeTeamWasPromoted, Boolean awayTeamWasPromoted, Double homeTeamAverageGoalsScoredOverall, Double homeTeamAverageGoalsConcededOverall, Double awayTeamAverageGoalsScoredOverall, Double awayTeamAverageGoalsConcededOverall, Double homeTeamAverageGoalsScoredHome, Double homeTeamAverageGoalsConcededHome, Double awayTeamAverageGoalsScoredAway, Double awayTeamAverageGoalsConcededAway,
-                                          Double homeTeamAverageGoalsScoredOverallForm, Double homeTeamAverageGoalsConcededOverallForm, Double awayTeamAverageGoalsScoredOverallForm, Double awayTeamAverageGoalsConcededOverallForm, Double homeTeamAverageGoalsScoredHomeForm, Double homeTeamAverageGoalsConcededHomeForm, Double awayTeamAverageGoalsScoredAwayForm, Double awayTeamAverageGoalsConcededAwayForm) {
+    public EnrichedFootballHistoricRecord(String division, LocalDate date, String homeTeam, String awayTeam, Integer homeTeamGoalsScored, Integer awayTeamGoalsScored, Character matchResult, Double homeTeamOverallFormL3, Double awayTeamOverallFormL3, Double homeTeamHomeFormL3, Double awayTeamAwayFormL3, Boolean homeTeamWasPromoted, Boolean awayTeamWasPromoted, Double homeTeamAverageGoalsScoredOverall, Double homeTeamAverageGoalsConcededOverall, Double awayTeamAverageGoalsScoredOverall, Double awayTeamAverageGoalsConcededOverall, Double homeTeamAverageGoalsScoredHome, Double homeTeamAverageGoalsConcededHome, Double awayTeamAverageGoalsScoredAway, Double awayTeamAverageGoalsConcededAway,
+                                          Double homeTeamAverageGoalsScoredOverallL3, Double homeTeamAverageGoalsConcededOverallL3, Double awayTeamAverageGoalsScoredOverallL3, Double awayTeamAverageGoalsConcededOverallL3, Double homeTeamAverageGoalsScoredHomeL3, Double homeTeamAverageGoalsConcededHomeL3, Double awayTeamAverageGoalsScoredAwayL3, Double awayTeamAverageGoalsConcededAwayL3) {
         super(division, date, homeTeam, awayTeam, homeTeamGoalsScored, awayTeamGoalsScored, matchResult);
-        this.homeTeamOverallForm = Double.valueOf(FORM_FORMAT.format(homeTeamOverallForm));
-        this.awayTeamOverallForm = Double.valueOf(FORM_FORMAT.format(awayTeamOverallForm));
-        this.homeTeamHomeForm = Double.valueOf(FORM_FORMAT.format(homeTeamHomeForm));
-        this.awayTeamAwayForm = Double.valueOf(FORM_FORMAT.format(awayTeamAwayForm));
+        this.homeTeamOverallFormL3 = Double.valueOf(FORM_FORMAT.format(homeTeamOverallFormL3));
+        this.awayTeamOverallFormL3 = Double.valueOf(FORM_FORMAT.format(awayTeamOverallFormL3));
+        this.homeTeamHomeFormL3 = Double.valueOf(FORM_FORMAT.format(homeTeamHomeFormL3));
+        this.awayTeamAwayFormL3 = Double.valueOf(FORM_FORMAT.format(awayTeamAwayFormL3));
         this.homeTeamWasPromoted = homeTeamWasPromoted;
         this.awayTeamWasPromoted = awayTeamWasPromoted;
         this.homeTeamAverageGoalsScoredOverall = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsScoredOverall));
@@ -101,34 +101,34 @@ public class EnrichedFootballHistoricRecord extends FootballHistoricRecord {
         this.awayTeamAverageGoalsScoredAway = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsScoredAway));
         this.awayTeamAverageGoalsConcededAway = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsConcededAway));
 
-        this.homeTeamAverageGoalsScoredOverallForm = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsScoredOverallForm));
-        this.homeTeamAverageGoalsConcededOverallForm = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsConcededOverallForm));
-        this.awayTeamAverageGoalsScoredOverallForm = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsScoredOverallForm));
-        this.awayTeamAverageGoalsConcededOverallForm = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsConcededOverallForm));
-        this.homeTeamAverageGoalsScoredHomeForm = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsScoredHomeForm));
-        this.homeTeamAverageGoalsConcededHomeForm = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsConcededHomeForm));
-        this.awayTeamAverageGoalsScoredAwayForm = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsScoredAwayForm));
-        this.awayTeamAverageGoalsConcededAwayForm = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsConcededAwayForm));
+        this.homeTeamAverageGoalsScoredOverallL3 = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsScoredOverallL3));
+        this.homeTeamAverageGoalsConcededOverallL3 = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsConcededOverallL3));
+        this.awayTeamAverageGoalsScoredOverallL3 = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsScoredOverallL3));
+        this.awayTeamAverageGoalsConcededOverallL3 = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsConcededOverallL3));
+        this.homeTeamAverageGoalsScoredHomeL3 = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsScoredHomeL3));
+        this.homeTeamAverageGoalsConcededHomeL3 = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsConcededHomeL3));
+        this.awayTeamAverageGoalsScoredAwayL3 = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsScoredAwayL3));
+        this.awayTeamAverageGoalsConcededAwayL3 = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsConcededAwayL3));
     }
 
     @JsonProperty("HomeTeamOverallFormL3")
-    public Double getHomeTeamOverallForm() {
-        return homeTeamOverallForm;
+    public Double getHomeTeamOverallFormL3() {
+        return homeTeamOverallFormL3;
     }
 
     @JsonProperty("AwayTeamOverallFormL3")
-    public Double getAwayTeamOverallForm() {
-        return awayTeamOverallForm;
+    public Double getAwayTeamOverallFormL3() {
+        return awayTeamOverallFormL3;
     }
 
     @JsonProperty("HomeTeamHomeFormL3")
-    public Double getHomeTeamHomeForm() {
-        return homeTeamHomeForm;
+    public Double getHomeTeamHomeFormL3() {
+        return homeTeamHomeFormL3;
     }
 
     @JsonProperty("AwayTeamAwayFormL3")
-    public Double getAwayTeamAwayForm() {
-        return awayTeamAwayForm;
+    public Double getAwayTeamAwayFormL3() {
+        return awayTeamAwayFormL3;
     }
 
     @JsonProperty("HomeTeamPromoted")
@@ -181,63 +181,63 @@ public class EnrichedFootballHistoricRecord extends FootballHistoricRecord {
         return awayTeamAverageGoalsConcededAway;
     }
 
-    @JsonProperty("HomeTeamAvgGoalsScoredOverallForm")
-    public Double getHomeTeamAverageGoalsScoredOverallForm() {
-        return homeTeamAverageGoalsScoredOverallForm;
+    @JsonProperty("HomeTeamAvgGoalsScoredOverallL3")
+    public Double getHomeTeamAverageGoalsScoredOverallL3() {
+        return homeTeamAverageGoalsScoredOverallL3;
     }
 
-    @JsonProperty("HomeTeamAvgGoalsConcededOverallForm")
-    public Double getHomeTeamAverageGoalsConcededOverallForm() {
-        return homeTeamAverageGoalsConcededOverallForm;
+    @JsonProperty("HomeTeamAvgGoalsConcededOverallL3")
+    public Double getHomeTeamAverageGoalsConcededOverallL3() {
+        return homeTeamAverageGoalsConcededOverallL3;
     }
 
-    @JsonProperty("AwayTeamAvgGoalsScoredOverallForm")
-    public Double getAwayTeamAverageGoalsScoredOverallForm() {
-        return awayTeamAverageGoalsScoredOverallForm;
+    @JsonProperty("AwayTeamAvgGoalsScoredOverallL3")
+    public Double getAwayTeamAverageGoalsScoredOverallL3() {
+        return awayTeamAverageGoalsScoredOverallL3;
     }
 
-    @JsonProperty("AwayTeamAvgGoalsConcededOverallForm")
-    public Double getAwayTeamAverageGoalsConcededOverallForm() {
-        return awayTeamAverageGoalsConcededOverallForm;
+    @JsonProperty("AwayTeamAvgGoalsConcededOverallL3")
+    public Double getAwayTeamAverageGoalsConcededOverallL3() {
+        return awayTeamAverageGoalsConcededOverallL3;
     }
 
-    @JsonProperty("HomeTeamAvgGoalsScoredHomeForm")
-    public Double getHomeTeamAverageGoalsScoredHomeForm() {
-        return homeTeamAverageGoalsScoredHomeForm;
+    @JsonProperty("HomeTeamAvgGoalsScoredHomeL3")
+    public Double getHomeTeamAverageGoalsScoredHomeL3() {
+        return homeTeamAverageGoalsScoredHomeL3;
     }
 
-    @JsonProperty("HomeTeamAvgGoalsConcededHomeForm")
-    public Double getHomeTeamAverageGoalsConcededHomeForm() {
-        return homeTeamAverageGoalsConcededHomeForm;
+    @JsonProperty("HomeTeamAvgGoalsConcededHomeL3")
+    public Double getHomeTeamAverageGoalsConcededHomeL3() {
+        return homeTeamAverageGoalsConcededHomeL3;
     }
 
-    @JsonProperty("AwayTeamAvgGoalsScoredAwayForm")
-    public Double getAwayTeamAverageGoalsScoredAwayForm() {
-        return awayTeamAverageGoalsScoredAwayForm;
+    @JsonProperty("AwayTeamAvgGoalsScoredAwayL3")
+    public Double getAwayTeamAverageGoalsScoredAwayL3() {
+        return awayTeamAverageGoalsScoredAwayL3;
     }
 
-    @JsonProperty("AwayTeamAvgGoalsConcededAwayForm")
-    public Double getAwayTeamAverageGoalsConcededAwayForm() {
-        return awayTeamAverageGoalsConcededAwayForm;
+    @JsonProperty("AwayTeamAvgGoalsConcededAwayL3")
+    public Double getAwayTeamAverageGoalsConcededAwayL3() {
+        return awayTeamAverageGoalsConcededAwayL3;
     }
 
-    public EnrichedFootballHistoricRecord setHomeTeamOverallForm(Double homeTeamOverallForm) {
-        this.homeTeamOverallForm = homeTeamOverallForm;
+    public EnrichedFootballHistoricRecord setHomeTeamOverallFormL3(Double homeTeamOverallFormL3) {
+        this.homeTeamOverallFormL3 = homeTeamOverallFormL3;
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setAwayTeamOverallForm(Double awayTeamOverallForm) {
-        this.awayTeamOverallForm = awayTeamOverallForm;
+    public EnrichedFootballHistoricRecord setAwayTeamOverallFormL3(Double awayTeamOverallFormL3) {
+        this.awayTeamOverallFormL3 = awayTeamOverallFormL3;
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setHomeTeamHomeForm(Double homeTeamHomeForm) {
-        this.homeTeamHomeForm = homeTeamHomeForm;
+    public EnrichedFootballHistoricRecord setHomeTeamHomeFormL3(Double homeTeamHomeFormL3) {
+        this.homeTeamHomeFormL3 = homeTeamHomeFormL3;
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setAwayTeamAwayForm(Double awayTeamAwayForm) {
-        this.awayTeamAwayForm = awayTeamAwayForm;
+    public EnrichedFootballHistoricRecord setAwayTeamAwayFormL3(Double awayTeamAwayFormL3) {
+        this.awayTeamAwayFormL3 = awayTeamAwayFormL3;
         return this;
     }
 
@@ -291,48 +291,48 @@ public class EnrichedFootballHistoricRecord extends FootballHistoricRecord {
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setHomeTeamAverageGoalsScoredOverallForm(Double homeTeamAverageGoalsScoredOverallForm) {
-        this.homeTeamAverageGoalsScoredOverallForm = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsScoredOverallForm));
+    public EnrichedFootballHistoricRecord setHomeTeamAverageGoalsScoredOverallL3(Double homeTeamAverageGoalsScoredOverallL3) {
+        this.homeTeamAverageGoalsScoredOverallL3 = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsScoredOverallL3));
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setHomeTeamAverageGoalsConcededOverallForm(Double homeTeamAverageGoalsConcededOverallForm) {
-        this.homeTeamAverageGoalsConcededOverallForm = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsConcededOverallForm));
+    public EnrichedFootballHistoricRecord setHomeTeamAverageGoalsConcededOverallL3(Double homeTeamAverageGoalsConcededOverallL3) {
+        this.homeTeamAverageGoalsConcededOverallL3 = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsConcededOverallL3));
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setAwayTeamAverageGoalsScoredOverallForm(Double awayTeamAverageGoalsScoredOverallForm) {
-        this.awayTeamAverageGoalsScoredOverallForm = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsScoredOverallForm));
+    public EnrichedFootballHistoricRecord setAwayTeamAverageGoalsScoredOverallL3(Double awayTeamAverageGoalsScoredOverallL3) {
+        this.awayTeamAverageGoalsScoredOverallL3 = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsScoredOverallL3));
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setAwayTeamAverageGoalsConcededOverallForm(Double awayTeamAverageGoalsConcededOverallForm) {
-        this.awayTeamAverageGoalsConcededOverallForm = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsConcededOverallForm));
+    public EnrichedFootballHistoricRecord setAwayTeamAverageGoalsConcededOverallL3(Double awayTeamAverageGoalsConcededOverallL3) {
+        this.awayTeamAverageGoalsConcededOverallL3 = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsConcededOverallL3));
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setHomeTeamAverageGoalsScoredHomeForm(Double homeTeamAverageGoalsScoredHomeForm) {
-        this.homeTeamAverageGoalsScoredHomeForm = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsScoredHomeForm));
+    public EnrichedFootballHistoricRecord setHomeTeamAverageGoalsScoredHomeL3(Double homeTeamAverageGoalsScoredHomeL3) {
+        this.homeTeamAverageGoalsScoredHomeL3 = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsScoredHomeL3));
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setHomeTeamAverageGoalsConcededHomeForm(Double homeTeamAverageGoalsConcededHomeForm) {
-        this.homeTeamAverageGoalsConcededHomeForm = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsConcededHomeForm));
+    public EnrichedFootballHistoricRecord setHomeTeamAverageGoalsConcededHomeL3(Double homeTeamAverageGoalsConcededHomeL3) {
+        this.homeTeamAverageGoalsConcededHomeL3 = Double.valueOf(FORM_FORMAT.format(homeTeamAverageGoalsConcededHomeL3));
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setAwayTeamAverageGoalsScoredAwayForm(Double awayTeamAverageGoalsScoredAwayForm) {
-        this.awayTeamAverageGoalsScoredAwayForm = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsScoredAwayForm));
+    public EnrichedFootballHistoricRecord setAwayTeamAverageGoalsScoredAwayL3(Double awayTeamAverageGoalsScoredAwayL3) {
+        this.awayTeamAverageGoalsScoredAwayL3 = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsScoredAwayL3));
         return this;
     }
 
-    public EnrichedFootballHistoricRecord setAwayTeamAverageGoalsConcededAwayForm(Double awayTeamAverageGoalsConcededAwayForm) {
-        this.awayTeamAverageGoalsConcededAwayForm = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsConcededAwayForm));
+    public EnrichedFootballHistoricRecord setAwayTeamAverageGoalsConcededAwayL3(Double awayTeamAverageGoalsConcededAwayL3) {
+        this.awayTeamAverageGoalsConcededAwayL3 = Double.valueOf(FORM_FORMAT.format(awayTeamAverageGoalsConcededAwayL3));
         return this;
     }
 
     public EnrichedFootballHistoricRecord build() {
-        return new EnrichedFootballHistoricRecord(this.div, this.date, this.homeTeam, this.awayTeam, this.homeTeamGoalsScored, this.awayTeamGoalsScored, this.matchResult, this.homeTeamOverallForm, this.awayTeamOverallForm, this.homeTeamHomeForm, this.awayTeamAwayForm, this.homeTeamWasPromoted, this.awayTeamWasPromoted, this.homeTeamAverageGoalsScoredOverall, this.homeTeamAverageGoalsConcededOverall, this.awayTeamAverageGoalsScoredOverall, this.awayTeamAverageGoalsConcededOverall, this.homeTeamAverageGoalsScoredHome, this.homeTeamAverageGoalsConcededHome, this.awayTeamAverageGoalsScoredAway, this.awayTeamAverageGoalsConcededAway, this.homeTeamAverageGoalsScoredOverallForm, this.homeTeamAverageGoalsConcededOverallForm, this.awayTeamAverageGoalsScoredOverallForm, this.awayTeamAverageGoalsConcededOverallForm, this.homeTeamAverageGoalsScoredHomeForm, this.homeTeamAverageGoalsConcededHomeForm, this.awayTeamAverageGoalsScoredAwayForm, this.awayTeamAverageGoalsConcededAwayForm);
+        return new EnrichedFootballHistoricRecord(this.div, this.date, this.homeTeam, this.awayTeam, this.homeTeamGoalsScored, this.awayTeamGoalsScored, this.matchResult, this.homeTeamOverallFormL3, this.awayTeamOverallFormL3, this.homeTeamHomeFormL3, this.awayTeamAwayFormL3, this.homeTeamWasPromoted, this.awayTeamWasPromoted, this.homeTeamAverageGoalsScoredOverall, this.homeTeamAverageGoalsConcededOverall, this.awayTeamAverageGoalsScoredOverall, this.awayTeamAverageGoalsConcededOverall, this.homeTeamAverageGoalsScoredHome, this.homeTeamAverageGoalsConcededHome, this.awayTeamAverageGoalsScoredAway, this.awayTeamAverageGoalsConcededAway, this.homeTeamAverageGoalsScoredOverallL3, this.homeTeamAverageGoalsConcededOverallL3, this.awayTeamAverageGoalsScoredOverallL3, this.awayTeamAverageGoalsConcededOverallL3, this.homeTeamAverageGoalsScoredHomeL3, this.homeTeamAverageGoalsConcededHomeL3, this.awayTeamAverageGoalsScoredAwayL3, this.awayTeamAverageGoalsConcededAwayL3);
     }
 
 
@@ -342,10 +342,10 @@ public class EnrichedFootballHistoricRecord extends FootballHistoricRecord {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         EnrichedFootballHistoricRecord that = (EnrichedFootballHistoricRecord) o;
-        return Objects.equals(homeTeamOverallForm, that.homeTeamOverallForm) &&
-                Objects.equals(awayTeamOverallForm, that.awayTeamOverallForm) &&
-                Objects.equals(homeTeamHomeForm, that.homeTeamHomeForm) &&
-                Objects.equals(awayTeamAwayForm, that.awayTeamAwayForm) &&
+        return Objects.equals(homeTeamOverallFormL3, that.homeTeamOverallFormL3) &&
+                Objects.equals(awayTeamOverallFormL3, that.awayTeamOverallFormL3) &&
+                Objects.equals(homeTeamHomeFormL3, that.homeTeamHomeFormL3) &&
+                Objects.equals(awayTeamAwayFormL3, that.awayTeamAwayFormL3) &&
                 Objects.equals(homeTeamWasPromoted, that.homeTeamWasPromoted) &&
                 Objects.equals(awayTeamWasPromoted, that.awayTeamWasPromoted) &&
                 Objects.equals(homeTeamAverageGoalsScoredOverall, that.homeTeamAverageGoalsScoredOverall) &&
@@ -356,28 +356,28 @@ public class EnrichedFootballHistoricRecord extends FootballHistoricRecord {
                 Objects.equals(homeTeamAverageGoalsConcededHome, that.homeTeamAverageGoalsConcededHome) &&
                 Objects.equals(awayTeamAverageGoalsScoredAway, that.awayTeamAverageGoalsScoredAway) &&
                 Objects.equals(awayTeamAverageGoalsConcededAway, that.awayTeamAverageGoalsConcededAway) &&
-                Objects.equals(homeTeamAverageGoalsScoredOverallForm, that.homeTeamAverageGoalsScoredOverallForm) &&
-                Objects.equals(homeTeamAverageGoalsConcededOverallForm, that.homeTeamAverageGoalsConcededOverallForm) &&
-                Objects.equals(awayTeamAverageGoalsScoredOverallForm, that.awayTeamAverageGoalsScoredOverallForm) &&
-                Objects.equals(awayTeamAverageGoalsConcededOverallForm, that.awayTeamAverageGoalsConcededOverallForm) &&
-                Objects.equals(homeTeamAverageGoalsScoredHomeForm, that.homeTeamAverageGoalsScoredHomeForm) &&
-                Objects.equals(homeTeamAverageGoalsConcededHomeForm, that.homeTeamAverageGoalsConcededHomeForm) &&
-                Objects.equals(awayTeamAverageGoalsScoredAwayForm, that.awayTeamAverageGoalsScoredAwayForm) &&
-                Objects.equals(awayTeamAverageGoalsConcededAwayForm, that.awayTeamAverageGoalsConcededAwayForm);
+                Objects.equals(homeTeamAverageGoalsScoredOverallL3, that.homeTeamAverageGoalsScoredOverallL3) &&
+                Objects.equals(homeTeamAverageGoalsConcededOverallL3, that.homeTeamAverageGoalsConcededOverallL3) &&
+                Objects.equals(awayTeamAverageGoalsScoredOverallL3, that.awayTeamAverageGoalsScoredOverallL3) &&
+                Objects.equals(awayTeamAverageGoalsConcededOverallL3, that.awayTeamAverageGoalsConcededOverallL3) &&
+                Objects.equals(homeTeamAverageGoalsScoredHomeL3, that.homeTeamAverageGoalsScoredHomeL3) &&
+                Objects.equals(homeTeamAverageGoalsConcededHomeL3, that.homeTeamAverageGoalsConcededHomeL3) &&
+                Objects.equals(awayTeamAverageGoalsScoredAwayL3, that.awayTeamAverageGoalsScoredAwayL3) &&
+                Objects.equals(awayTeamAverageGoalsConcededAwayL3, that.awayTeamAverageGoalsConcededAwayL3);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), homeTeamOverallForm, awayTeamOverallForm, homeTeamHomeForm, awayTeamAwayForm, homeTeamWasPromoted, awayTeamWasPromoted, homeTeamAverageGoalsScoredOverall, homeTeamAverageGoalsConcededOverall, awayTeamAverageGoalsScoredOverall, awayTeamAverageGoalsConcededOverall, homeTeamAverageGoalsScoredHome, homeTeamAverageGoalsConcededHome, awayTeamAverageGoalsScoredAway, awayTeamAverageGoalsConcededAway, homeTeamAverageGoalsScoredOverallForm, homeTeamAverageGoalsConcededOverallForm, awayTeamAverageGoalsScoredOverallForm, awayTeamAverageGoalsConcededOverallForm, homeTeamAverageGoalsScoredHomeForm, homeTeamAverageGoalsConcededHomeForm, awayTeamAverageGoalsScoredAwayForm, awayTeamAverageGoalsConcededAwayForm);
+        return Objects.hash(super.hashCode(), homeTeamOverallFormL3, awayTeamOverallFormL3, homeTeamHomeFormL3, awayTeamAwayFormL3, homeTeamWasPromoted, awayTeamWasPromoted, homeTeamAverageGoalsScoredOverall, homeTeamAverageGoalsConcededOverall, awayTeamAverageGoalsScoredOverall, awayTeamAverageGoalsConcededOverall, homeTeamAverageGoalsScoredHome, homeTeamAverageGoalsConcededHome, awayTeamAverageGoalsScoredAway, awayTeamAverageGoalsConcededAway, homeTeamAverageGoalsScoredOverallL3, homeTeamAverageGoalsConcededOverallL3, awayTeamAverageGoalsScoredOverallL3, awayTeamAverageGoalsConcededOverallL3, homeTeamAverageGoalsScoredHomeL3, homeTeamAverageGoalsConcededHomeL3, awayTeamAverageGoalsScoredAwayL3, awayTeamAverageGoalsConcededAwayL3);
     }
 
     @Override
     public String toString() {
         return new StringJoiner(", ", EnrichedFootballHistoricRecord.class.getSimpleName() + "[", "]")
-                .add("homeTeamOverallForm=" + homeTeamOverallForm)
-                .add("awayTeamOverallForm=" + awayTeamOverallForm)
-                .add("homeTeamHomeForm=" + homeTeamHomeForm)
-                .add("awayTeamAwayForm=" + awayTeamAwayForm)
+                .add("homeTeamOverallFormL3=" + homeTeamOverallFormL3)
+                .add("awayTeamOverallFormL3=" + awayTeamOverallFormL3)
+                .add("homeTeamHomeFormL3=" + homeTeamHomeFormL3)
+                .add("awayTeamAwayFormL3=" + awayTeamAwayFormL3)
                 .add("homeTeamWasPromoted=" + homeTeamWasPromoted)
                 .add("awayTeamWasPromoted=" + awayTeamWasPromoted)
                 .add("homeTeamAverageGoalsScoredOverall=" + homeTeamAverageGoalsScoredOverall)
@@ -388,14 +388,14 @@ public class EnrichedFootballHistoricRecord extends FootballHistoricRecord {
                 .add("homeTeamAverageGoalsConcededHome=" + homeTeamAverageGoalsConcededHome)
                 .add("awayTeamAverageGoalsScoredAway=" + awayTeamAverageGoalsScoredAway)
                 .add("awayTeamAverageGoalsConcededAway=" + awayTeamAverageGoalsConcededAway)
-                .add("homeTeamAverageGoalsScoredOverallForm=" + homeTeamAverageGoalsScoredOverallForm)
-                .add("homeTeamAverageGoalsConcededOverallForm=" + homeTeamAverageGoalsConcededOverallForm)
-                .add("awayTeamAverageGoalsScoredOverallForm=" + awayTeamAverageGoalsScoredOverallForm)
-                .add("awayTeamAverageGoalsConcededOverallForm=" + awayTeamAverageGoalsConcededOverallForm)
-                .add("homeTeamAverageGoalsScoredHomeForm=" + homeTeamAverageGoalsScoredHomeForm)
-                .add("homeTeamAverageGoalsConcededHomeForm=" + homeTeamAverageGoalsConcededHomeForm)
-                .add("awayTeamAverageGoalsScoredAwayForm=" + awayTeamAverageGoalsScoredAwayForm)
-                .add("awayTeamAverageGoalsConcededAwayForm=" + awayTeamAverageGoalsConcededAwayForm)
+                .add("homeTeamAverageGoalsScoredOverallL3=" + homeTeamAverageGoalsScoredOverallL3)
+                .add("homeTeamAverageGoalsConcededOverallL3=" + homeTeamAverageGoalsConcededOverallL3)
+                .add("awayTeamAverageGoalsScoredOverallL3=" + awayTeamAverageGoalsScoredOverallL3)
+                .add("awayTeamAverageGoalsConcededOverallL3=" + awayTeamAverageGoalsConcededOverallL3)
+                .add("homeTeamAverageGoalsScoredHomeL3=" + homeTeamAverageGoalsScoredHomeL3)
+                .add("homeTeamAverageGoalsConcededHomeL3=" + homeTeamAverageGoalsConcededHomeL3)
+                .add("awayTeamAverageGoalsScoredAwayL3=" + awayTeamAverageGoalsScoredAwayL3)
+                .add("awayTeamAverageGoalsConcededAwayL3=" + awayTeamAverageGoalsConcededAwayL3)
                 .add("div='" + div + "'")
                 .add("date=" + date)
                 .add("homeTeam='" + homeTeam + "'")

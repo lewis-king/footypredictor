@@ -70,10 +70,10 @@ public class FormProcessor implements Processor {
             }
 
             EnrichedFootballHistoricRecord enrichedRecord = new EnrichedFootballHistoricRecord(currentRecord);
-            enrichedRecord = enrichedRecord.setHomeTeamOverallForm(calculatedOverallHomeTeamForm.orElse(0.5))
-                    .setAwayTeamOverallForm(calculatedOverallAwayTeamForm.orElse(0.5))
-                    .setHomeTeamHomeForm(calculatedHomeTeamHomeForm.orElse(0.5))
-                    .setAwayTeamAwayForm(calculatedAwayTeamAwayForm.orElse(0.5))
+            enrichedRecord = enrichedRecord.setHomeTeamOverallFormL3(calculatedOverallHomeTeamForm.orElse(0.5))
+                    .setAwayTeamOverallFormL3(calculatedOverallAwayTeamForm.orElse(0.5))
+                    .setHomeTeamHomeFormL3(calculatedHomeTeamHomeForm.orElse(0.5))
+                    .setAwayTeamAwayFormL3(calculatedAwayTeamAwayForm.orElse(0.5))
                     .build();
             enrichedRecords.add(enrichedRecord);
         }
