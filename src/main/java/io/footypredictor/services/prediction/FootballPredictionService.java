@@ -41,7 +41,7 @@ public class FootballPredictionService implements PredictionService {
     public FootballPredictionService(RestTemplate restTemplate, OddsRetriever oddsRetriever, PredictionRepository predictionRepository, PredictionMLConfig predictionMLConfig, OddsConfig oddsConfig, NewPredictionsDataPreProcessor newPredictionsDataPreProcessor) throws IOException {
         this.restTemplate = restTemplate;
         this.oddsRetriever = oddsRetriever;
-        this.oddsRetriever = new DummyFootballOddsRetriever("/Users/lking/Workspace/footypredictor/src/test/resources/snapshot-16-09-19/odds_api_example_e1.json");
+        //this.oddsRetriever = new DummyFootballOddsRetriever("/Users/lking/Workspace/footypredictor/src/test/resources/test-odds-data/sample.json");
         this.predictionRepository = predictionRepository;
         this.predictionMLConfig = predictionMLConfig;
         this.oddsConfig = oddsConfig;
@@ -71,7 +71,7 @@ public class FootballPredictionService implements PredictionService {
                 .flatMap(e -> e.stream()).collect(Collectors.toList());
         final Predictions predictions = PredictionsTransformer.enrichPredictions(events, predictionsResponse.getBody());
 
-        //predictionRepository.saveAll(predictions.getPredictions());
+        predictionRepository.saveAll(predictions.getPredictions());
 
         return predictions;
     }
