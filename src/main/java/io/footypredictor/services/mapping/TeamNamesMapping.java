@@ -110,6 +110,19 @@ public enum TeamNamesMapping {
     CARLISLE("Carlisle", "Carlisle United"),
     OLDHAM("Oldham", "Oldham Athletic"),
 
+    CELTIC("Celtic", "Celtic"),
+    MOTHERWELL("Motherwell", "Motherwell"),
+    ST_MIRREN("St Mirren", "St Mirren"),
+    ABERDEEN("Aberdeen", "Aberdeen"),
+    HIBERNIAN("Hibernian", "Hibernian"),
+    HEARTS("Hearts", "Hearts"),
+    KILMARNOCK("Kilmarnock", "Kilmarnock"),
+    ROSS_COUNTY("Ross County", "Ross County"),
+    ST_JOHNSTONE("St Johnstone", "St Johnstone"),
+    LIVINGSTONE("Livingstone", "Livingston"),
+    HAMILTON("Hamilton", "Hamilton Academical"),
+    RANGERS("Rangers", "Rangers"),
+
     FIORENTINA("Fiorentina", "Fiorentina"),
     NAPOLI("Napoli", "Napoli"),
     ROMA("Roma", "AS Roma"),
@@ -127,6 +140,10 @@ public enum TeamNamesMapping {
     INTER("Inter", "FC Internazionale"),
     LAZIO("Lazio", "Lazio"),
     UDINESE("Udinese", "Udinese"),
+    PARMA("Parma", "Parma"),
+    LECCE("Lecce", "Lecce"),
+    BRESCIA("Brescia", "Brescia"),
+    HELLAS_VERONA("Verona", "Hellas Verona FC"),
 
     ATLETICO_MADRID("Ath Madrid", "Atlético Madrid"),
     EIBAR("Eibar", "Eibar"),
@@ -148,6 +165,9 @@ public enum TeamNamesMapping {
     RAYO_VALLECANO("Vallecano", "Rayo Vallecano"),
     VALLADOLID("Valladolid", "Valladolid"),
     HUESCA("Huesca", "Huesca"),
+    GRANADA("Granada", "Granada"),
+    MALLORCA("Mallorca", "Mallorca"),
+    OSASUNA("Osasuna", "Osasuna"),
 
     DORTMUND("Dortmund", "Borussia Dortmund"),
     FRANKFURT("Ein Frankfurt", "Eintracht Frankfurt"),
@@ -167,6 +187,9 @@ public enum TeamNamesMapping {
     STUTTGART("Stuttgart", "VfB Stuttgart"),
     WERDER_BREMEN("Werder Bremen", "Werder Bremen"),
     NURNBERG("Nurnberg", "1 FC Nürnberg"),
+    PADERBORN("Paderborn", "SC Paderborn"),
+    KOLN("FC Koln", "FC Koln"),
+    UNION_BERLIN("Union Berlin", "Union Berlin"),
 
     NICE("Nice", "Nice"),
     BREST("Brest", "Brest"),
@@ -189,7 +212,28 @@ public enum TeamNamesMapping {
     MARSEILLE("Marseille", "Marseille"),
     NANTES("Nantes", "Nantes"),
     NIMES("Nimes", "Nîmes Olympique"),
-    REIMS("Reims", "Stade de Reims")
+    REIMS("Reims", "Stade de Reims"),
+
+    PSV("PSV Eindhoven", "PSV Eindhoven"),
+    GRONINGEN("Groningen", "Groningen"),
+    AJAX("Ajax", "Ajax"),
+    FORTUNA_SITTARD("For Sittard", "Fortuna Sittard"),
+    AZ_ALKMAAR("AZ Alkmaar", "AZ Alkmaar"),
+    FEYENOORD("Feyenoord", "Feyenoord"),
+    DEN_HAAG("Den Haag", "ADO Den Haag"),
+    EMMEN("FC Emmen", "FC Emmen"),
+    HEERENVEEN("Heerenveen", "Heerenveen"),
+    VENLO("VVV Venlo", "VVV Venlo"),
+    ROTTERDAM("Sparta Rotterdam", "Sparta Rotterdam"),
+    WAALWIJK("Waalwijk", "RKC Waalwijk"),
+    VITESSE("Vitesse", "Vitesse Arnhem"),
+    ZWOLLE("Zwolle", "FC Zwolle"),
+    WILLEM("Willem II", "Willem II"),
+    UTRECHT("Utrecht", "FC Utrecht"),
+    HERACLES("Heracles", "Heracles Almelo"),
+    TWENTE("Twente", "FC Twente Enschede"),
+
+
     ;
 
     private final String primaryName;

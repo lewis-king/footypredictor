@@ -34,7 +34,7 @@ public class DataPreProcessorIT {
 
         List<EnrichedFootballHistoricRecord> expected = getExpectedResults();
         List<List<EnrichedFootballHistoricRecord>> result = dataPreProcessor.enrichFootballData();
-        List<EnrichedFootballHistoricRecord> resultsToValidate = result.get(20);
+        List<EnrichedFootballHistoricRecord> resultsToValidate = result.get(30);
 
         for (int i = 0; i < 50; i++) {
             assertEquals(expected.get(i), resultsToValidate.get(i));

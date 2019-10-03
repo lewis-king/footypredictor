@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static io.footypredictor.preprocessor.constants.FootballDataMetadata.LEAGUES;
-import static io.footypredictor.preprocessor.constants.FootballDataMetadata.YEARS;
+import static io.footypredictor.preprocessor.constants.FootballDataMetadata.HISTORIC_YEARS;
 
 
 @Service
@@ -36,7 +36,7 @@ public class HistoricDataPreProcessor {
 
         List<List<EnrichedFootballHistoricRecord>> enrichedFootballDatas = new ArrayList<>();
 
-        for (String year : YEARS) {
+        for (String year : HISTORIC_YEARS) {
             for (String league : LEAGUES) {
                 List<EnrichedFootballHistoricRecord> enrichedFootballData = null;
                 try {

@@ -51,11 +51,12 @@ public class FootballPredictionService implements PredictionService {
     @Override
     public Predictions predict(String leagueId) throws JsonProcessingException {
 
-        List<OddsPayload> oddsPayloads = new ArrayList<>();
+        List<OddsPayload> overallOddsPayloads = new ArrayList<>();
         List<EnrichedFootballHistoricRecord> overallEnrichedFootballMatches = new ArrayList<>();
         oddsConfig.getLeagues().forEach(league -> {
-            oddsPayloads.addAll(oddsRetriever.retrieveOdds(league));
-            List<Match> matches = MatchesTransformer.constructMatches(oddsPayloads);
+            List<OddsPayload> individualOddsPayload = oddsRetriever.retrieveOdds(league);
+            overallOddsPayloads.addAll(individualOddsPayload);
+            List<Match> matches = MatchesTransformer.constructMatches(individualOddsPayload);
             List<EnrichedFootballHistoricRecord> enrichedFootballData = newPredictionsDataPreProcessor.enrichFootballData(matches);
             overallEnrichedFootballMatches.addAll(enrichedFootballData);
         });
@@ -67,11 +68,11 @@ public class FootballPredictionService implements PredictionService {
         String requestPayload = new ObjectMapper().writeValueAsString(overallEnrichedFootballMatches);
         HttpEntity<String> requestEntity = new HttpEntity<>(requestPayload, headers);
         final ResponseEntity<Predictions> predictionsResponse = restTemplate.exchange(predictionMLConfig.getApi(), HttpMethod.POST, requestEntity, Predictions.class, (Object) null);
-        List<Event> events = oddsPayloads.stream().map(oddsPayload -> oddsPayload.getEvents())
+        List<Event> events = overallOddsPayloads.stream().map(oddsPayload -> oddsPayload.getEvents())
                 .flatMap(e -> e.stream()).collect(Collectors.toList());
         final Predictions predictions = PredictionsTransformer.enrichPredictions(events, predictionsResponse.getBody());
 
-        predictionRepository.saveAll(predictions.getPredictions());
+        //predictionRepository.saveAll(predictions.getPredictions());
 
         return predictions;
     }

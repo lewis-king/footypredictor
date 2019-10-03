@@ -35,9 +35,8 @@ class Selections extends Component {
     console.log(data);
     return (
       <div>
-        {/*<SimpleTable predictions={this.state.predictions}/>*/}
         <MUIDataTable
-          title={"Latest Predictions"}
+          title={"Upcoming predictions"}
           data={data}
           columns={columns}
           options={options}

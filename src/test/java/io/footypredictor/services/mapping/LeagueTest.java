@@ -39,7 +39,7 @@ public class LeagueTest {
     @Test
     public void getLeagueByThirdPartyKey_g1() {
         League actual = League.getLeagueByThirdPartyKey("soccer_germany_bundesliga");
-        assertEquals(League.G1, actual);
+        assertEquals(League.D1, actual);
     }
 
     @Test

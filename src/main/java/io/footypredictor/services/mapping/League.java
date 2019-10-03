@@ -8,14 +8,17 @@ public enum League {
     E2("E1", "Championship", "soccer_efl_champ"),
     E3("E2", "League One", "soccer_england_league1"),
     E4("E3", "League Two", "soccer_england_league2"),
+    SC0("SC0", "SPL", "soccer_spl"),
 
-    S1("S1", "La Liga", "soccer_spain_la_liga"),
+    S1("SP1", "La Liga", "soccer_spain_la_liga"),
 
-    G1("G1", "Bundesliga", "soccer_germany_bundesliga"),
+    D1("D1", "Bundesliga", "soccer_germany_bundesliga"),
 
     I1("I1", "Serie A", "soccer_italy_serie_a"),
 
-    F1("F1", "Ligue 1", "soccer_france_ligue_one")
+    F1("F1", "Ligue 1", "soccer_france_ligue_one"),
+
+    N1("N1", "Eredivisie", "soccer_netherlands_eredivisie")
     ;
 
     private final String leagueKey;
