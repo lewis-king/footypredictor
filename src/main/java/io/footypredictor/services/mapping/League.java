@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public enum League {
 
-    E1("E0", "Premier League", "soccer_epl"),
-    E2("E1", "Championship", "soccer_efl_champ"),
-    E3("E2", "League One", "soccer_england_league1"),
-    E4("E3", "League Two", "soccer_england_league2"),
+    E0("E0", "Premier League", "soccer_epl"),
+    E1("E1", "Championship", "soccer_efl_champ"),
+    E2("E2", "League One", "soccer_england_league1"),
+    E3("E3", "League Two", "soccer_england_league2"),
     SC0("SC0", "SPL", "soccer_spl"),
 
-    S1("SP1", "La Liga", "soccer_spain_la_liga"),
+    SP1("SP1", "La Liga", "soccer_spain_la_liga"),
 
     D1("D1", "Bundesliga", "soccer_germany_bundesliga"),
 

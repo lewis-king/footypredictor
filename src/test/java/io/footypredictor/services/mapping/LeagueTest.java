@@ -7,37 +7,37 @@ import static org.junit.Assert.*;
 public class LeagueTest {
 
     @Test
-    public void getLeagueByThirdPartyKey_e1() {
+    public void getLeagueByThirdPartyKey_e0() {
         League actual = League.getLeagueByThirdPartyKey("soccer_epl");
+        assertEquals(League.E0, actual);
+    }
+
+    @Test
+    public void getLeagueByThirdPartyKey_e1() {
+        League actual = League.getLeagueByThirdPartyKey("soccer_efl_champ");
         assertEquals(League.E1, actual);
     }
 
     @Test
     public void getLeagueByThirdPartyKey_e2() {
-        League actual = League.getLeagueByThirdPartyKey("soccer_efl_champ");
+        League actual = League.getLeagueByThirdPartyKey("soccer_england_league1");
         assertEquals(League.E2, actual);
     }
 
     @Test
     public void getLeagueByThirdPartyKey_e3() {
-        League actual = League.getLeagueByThirdPartyKey("soccer_england_league1");
+        League actual = League.getLeagueByThirdPartyKey("soccer_england_league2");
         assertEquals(League.E3, actual);
     }
 
     @Test
-    public void getLeagueByThirdPartyKey_e4() {
-        League actual = League.getLeagueByThirdPartyKey("soccer_england_league2");
-        assertEquals(League.E4, actual);
-    }
-
-    @Test
-    public void getLeagueByThirdPartyKey_s1() {
+    public void getLeagueByThirdPartyKey_sp1() {
         League actual = League.getLeagueByThirdPartyKey("soccer_spain_la_liga");
-        assertEquals(League.S1, actual);
+        assertEquals(League.SP1, actual);
     }
 
     @Test
-    public void getLeagueByThirdPartyKey_g1() {
+    public void getLeagueByThirdPartyKey_d1() {
         League actual = League.getLeagueByThirdPartyKey("soccer_germany_bundesliga");
         assertEquals(League.D1, actual);
     }

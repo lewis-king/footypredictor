@@ -72,7 +72,7 @@ public class FootballPredictionService implements PredictionService {
                 .flatMap(e -> e.stream()).collect(Collectors.toList());
         final Predictions predictions = PredictionsTransformer.enrichPredictions(events, predictionsResponse.getBody());
 
-        //predictionRepository.saveAll(predictions.getPredictions());
+        predictionRepository.saveAll(predictions.getPredictions());
 
         return predictions;
     }

@@ -20,6 +20,6 @@ public class MatchesTransformerTest {
 
     @Test
     public void verifySizeOfConstructedMatches() {
-        assertThat(MatchesTransformer.constructMatches(oddsRetriever.retrieveOdds("E0")).size(), is(equalTo(13)));
+        assertThat(MatchesTransformer.constructMatches(oddsRetriever.retrieveOdds("E0")).size(), is(equalTo(8)));
     }
 }
