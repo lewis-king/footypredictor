@@ -78,6 +78,26 @@ public class FootballPredictionService implements PredictionService {
     }
 
     @Override
+    public Predictions predict(List<Match> matches) {
+
+        List<EnrichedFootballHistoricRecord> enrichedFootballData = newPredictionsDataPreProcessor.enrichFootballData(matches);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        String requestPayload = null;
+        try {
+            requestPayload = new ObjectMapper().writeValueAsString(enrichedFootballData);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        HttpEntity<String> requestEntity = new HttpEntity<>(requestPayload, headers);
+        final ResponseEntity<Predictions> predictionsResponse = restTemplate.exchange(predictionMLConfig.getApi(), HttpMethod.POST, requestEntity, Predictions.class, (Object) null);
+        return predictionsResponse.getBody();
+    }
+
+    @Override
     public Predictions retrievePredictions() {
         return new Predictions(BetRecommendationDecorator.deriveRecommendedBetTypes(predictionRepository.retrieveLatestPredictions()));
     }

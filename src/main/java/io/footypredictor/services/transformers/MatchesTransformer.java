@@ -48,13 +48,9 @@ public class MatchesTransformer {
     }
 
     private static boolean teamAlreadyExistsInMatches(List<Match> matches, String homeTeam, String awayTeam) {
-        if (matches.stream().map(Match::getHomeTeam).collect(Collectors.toList()).contains(homeTeam)
+        return (matches.stream().map(Match::getHomeTeam).collect(Collectors.toList()).contains(homeTeam)
                 || matches.stream().map(Match::getAwayTeam).collect(Collectors.toList()).contains(homeTeam)
                 || matches.stream().map(Match::getHomeTeam).collect(Collectors.toList()).contains(awayTeam)
-                || matches.stream().map(Match::getAwayTeam).collect(Collectors.toList()).contains(awayTeam)) {
-            return true;
-        }
-        return false;
+                || matches.stream().map(Match::getAwayTeam).collect(Collectors.toList()).contains(awayTeam));
     }
-
 }

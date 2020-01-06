@@ -119,7 +119,7 @@ public enum TeamNamesMapping {
     KILMARNOCK("Kilmarnock", "Kilmarnock"),
     ROSS_COUNTY("Ross County", "Ross County"),
     ST_JOHNSTONE("St Johnstone", "St Johnstone"),
-    LIVINGSTONE("Livingstone", "Livingston"),
+    LIVINGSTONE("Livingston", "Livingston"),
     HAMILTON("Hamilton", "Hamilton Academical"),
     RANGERS("Rangers", "Rangers"),
 
